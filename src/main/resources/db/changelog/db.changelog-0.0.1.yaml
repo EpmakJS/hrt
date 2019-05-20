@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: molecule
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: desc
+                  type: VARCHAR(255)
+  - changeSet:
+      id: 2
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: isotope
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: desc
+                  type: VARCHAR(255)
+  - changeSet:
+      id: 3
+      author: v.ermakov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: isotope
+            constraintName: fk_isotope_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
