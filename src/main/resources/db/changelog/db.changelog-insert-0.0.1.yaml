@@ -1,0 +1,428 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: v2.ermakov
+      changes:
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 1
+              - column:
+                  name: desc
+                  value: "H2O"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 2
+              - column:
+                  name: desc
+                  value: "CO2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 3
+              - column:
+                  name: desc
+                  value: "O3"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 4
+              - column:
+                  name: desc
+                  value: "N2O"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 5
+              - column:
+                  name: desc
+                  value: "CO"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 6
+              - column:
+                  name: desc
+                  value: "CH4"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 7
+              - column:
+                  name: desc
+                  value: "O2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 8
+              - column:
+                  name: desc
+                  value: "NO"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 9
+              - column:
+                  name: desc
+                  value: "SO2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 10
+              - column:
+                  name: desc
+                  value: "NO2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 11
+              - column:
+                  name: desc
+                  value: "NH3"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 12
+              - column:
+                  name: desc
+                  value: "HNO3"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 13
+              - column:
+                  name: desc
+                  value: "OH"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 14
+              - column:
+                  name: desc
+                  value: "HF"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 15
+              - column:
+                  name: desc
+                  value: "HCl"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 16
+              - column:
+                  name: desc
+                  value: "HBr"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 17
+              - column:
+                  name: desc
+                  value: "HI"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 18
+              - column:
+                  name: desc
+                  value: "ClO"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 19
+              - column:
+                  name: desc
+                  value: "OCS"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 20
+              - column:
+                  name: desc
+                  value: "H2CO"                  
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 21
+              - column:
+                  name: desc
+                  value: "HOCl"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 22
+              - column:
+                  name: desc
+                  value: "N2"                  
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 23
+              - column:
+                  name: desc
+                  value: "HCN"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 24
+              - column:
+                  name: desc
+                  value: "CH3Cl"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 25
+              - column:
+                  name: desc
+                  value: "H2O2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 26
+              - column:
+                  name: desc
+                  value: "C2H2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 27
+              - column:
+                  name: desc
+                  value: "C2H6"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 28
+              - column:
+                  name: desc
+                  value: "PH3"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 29
+              - column:
+                  name: desc
+                  value: "COF2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 30
+              - column:
+                  name: desc
+                  value: "SF6"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 31
+              - column:
+                  name: desc
+                  value: "H2S"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 32
+              - column:
+                  name: desc
+                  value: "HCOOH"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 33
+              - column:
+                  name: desc
+                  value: "HO2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 34
+              - column:
+                  name: desc
+                  value: "O"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 35
+              - column:
+                  name: desc
+                  value: "ClONO2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 36
+              - column:
+                  name: desc
+                  value: "NO+"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 37
+              - column:
+                  name: desc
+                  value: "HOBr"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 38
+              - column:
+                  name: desc
+                  value: "C2H4"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 39
+              - column:
+                  name: desc
+                  value: "CH3OH"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 40
+              - column:
+                  name: desc
+                  value: "CH3Br"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 41
+              - column:
+                  name: desc
+                  value: "CH3CN"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 42
+              - column:
+                  name: desc
+                  value: "CF4"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 43
+              - column:
+                  name: desc
+                  value: "C4H2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 44
+              - column:
+                  name: desc
+                  value: "HC3N"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 45
+              - column:
+                  name: desc
+                  value: "H2"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 46
+              - column:
+                  name: desc
+                  value: "CS"
+        - insert:
+            tableName: molecule
+            columns:
+              - column:
+                  name: mol_id
+                  value: 47
+              - column:
+                  name: desc
+                  value: "SO3"            
