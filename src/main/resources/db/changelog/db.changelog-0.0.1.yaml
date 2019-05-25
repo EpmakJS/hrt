@@ -28,6 +28,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
                   name: iso_id
                   type: INT
               - column:
@@ -69,7 +74,6 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
-                    primaryKey: true
                   name: mol_id
                   type: INT
               - column:
@@ -80,6 +84,7 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
+                    primaryKey: true
                   name: vacuum_wavenumber
                   type: REAL
               - column:
@@ -130,3 +135,17 @@ databaseChangeLog:
               - column:
                   name: g_lower
                   type: REAL
+  - changeSet:
+      id: 5
+      author: v.ermakov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 1
+            constraintName: fk_1_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
