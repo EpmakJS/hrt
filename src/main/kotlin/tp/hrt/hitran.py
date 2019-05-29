@@ -58,24 +58,7 @@ def convert_data_types(arrays):
 
 def insert_data_to_database(path, table_name):
     array = convert_data_types(get_array_of_data_from_file(path))
-    # stmt = f"INSERT INTO \"{table_name}\" values (1, 1, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, '1', '1', '1', '1', 1, 1, '1', 1.0, 1.0)"
-    # cursor.execute(stmt)
     for data in array:
-        # columns = ['mol_id', 'iso_number', 'vacuum_wavenumber', 'intensity', 'einstein_a', 'gamma_air', 'gamma_self',
-        #            'lower_state_energy', 'temperature_dependence', 'air_pressure', 'upper_state_global_quanta',
-        #            'lower_state_global_quanta', 'upper_state_local_quanta', 'lower_state_local_quanta', 'i_err',
-        #            'i_ref', 'flag', 'g_upper', 'g_lower']
-        # stmt = sql.SQL('INSERT INTO {} ({}) VALUES ({})').format(
-        #     sql.Identifier('34'),
-        #     sql.SQL(',').join(map(sql.Identifier, columns)),
-        #     sql.SQL(',').join(map(sql.Identifier, data))
-        # )
-        # cursor.execute(stmt)
-        # cursor.execute(
-        #     "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) values (%i, %i, %f, %e, %e, %f, %f, %f, %f, %f, %s, %s, %s, %s, %i, %i, %s, %f, %f)" % table_name, columns,
-        #     data
-        # )
-        # columns_tuple = tuple(columns)
         data_tuple = tuple(data)
         stmt = f"INSERT INTO \"{table_name}\" values {data_tuple}"
         cursor.execute(stmt)
