@@ -28,3 +28,6 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+### HITRAN FILES ###
+/src/main/kotlin/tp/hrt/files/

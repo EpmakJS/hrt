@@ -1,0 +1,29 @@
+### POST request to gave result for direct task
+POST http://localhost:8080/hitran/direct-task
+Content-Type: application/json
+
+{
+  "vmin": 0.0,
+  "vmax": 1.0,
+  "p": 1.0,
+  "T": 296.0,
+  "l": 1.0,
+  "concentration": {
+    "O2": 0.1,
+    "H2O": 0.02,
+    "N2": 0.70,
+    "CO2": 0.18
+  }
+}
+
+### POST request to gave result for inverse task
+POST http://localhost:8080/hitran/inverse-task
+Content-Type: application/json
+
+{
+  "id": 9,
+  "firstName": "Jane",
+  "lastName": "Doe"
+}
+
+###

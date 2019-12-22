@@ -26,6 +26,7 @@ dependencies {
 	implementation("org.liquibase:liquibase-core")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.knowm.xchart:xchart:3.5.1")
 }
 
 tasks.withType<KotlinCompile> {

@@ -61,9 +61,16 @@ def insert_data_to_database(path, table_name):
     for data in array:
         data_tuple = tuple(data)
         stmt = f"INSERT INTO \"{table_name}\" values {data_tuple}"
-        cursor.execute(stmt)
+        try:
+            cursor.execute(stmt)
+            conn.commit()
+        except Exception as e:
+            print(e.__class__)
 
 
+insert_data_to_database('files/01_hit12.par', '1')
+insert_data_to_database('files/02_hit12.par', '2')
+insert_data_to_database('files/07_hit12.par', '7')
 insert_data_to_database('files/34_hit08.par', '34')
 
 cursor.close()
