@@ -4,6 +4,7 @@ package tp.hrt.service.impl
 import org.knowm.xchart.QuickChart
 import org.knowm.xchart.SwingWrapper
 import org.springframework.stereotype.Service
+import tp.hrt.createSingleLane
 import tp.hrt.dto.*
 import tp.hrt.service.HitranService
 import javax.validation.UnexpectedTypeException
@@ -13,59 +14,7 @@ import kotlin.math.*
 class HitranServiceImpl(
 ) : HitranService {
 
-    override fun drawPlot(directTaskDto: DirectTaskDto) {
-        val molarMass = object {
-            val H2O: Double = 18.010565
-            val CO2: Double = 43.989830
-            val O3: Double = 47.984745
-            val N2O: Double = 44.001062
-            val CO: Double = 27.994915
-            val CH4: Double = 16.031300
-            val O2: Double = 31.989830
-            val NO: Double = 29.997989
-            val SO2: Double = 63.961901
-            val NO2: Double = 45.992904
-            val NH3: Double = 17.026549
-            val NHO3: Double = 62.995644
-            val OH: Double = 17.002740
-            val HF: Double = 20.006229
-            val HCL: Double = 35.976678
-            val HBr: Double = 79.926160
-            val HI: Double = 127.912297
-            val ClO: Double = 50.963768
-            val OCS: Double = 59.966986
-            val H2CO: Double = 30.010565
-            val HOCl: Double = 51.971593
-            val N2: Double = 28.006148
-            val HCN: Double = 27.010899
-            val CH3Cl: Double = 49.992328
-            val H2O2: Double = 34.005480
-            val C2H2: Double = 26.015650
-            val C2H6: Double = 30.046950
-            val PH3: Double = 33.997238
-            val COF2: Double = 65.991722
-            val SF6: Double = 145.962492
-            val H2S: Double = 33.987721
-            val HCOOH: Double = 46.005480
-            val HO2: Double = 32.997655
-            val O: Double = 15.994915
-            val ClONO2: Double = 96.956672
-            val NOplus: Double = 29.997989
-            val HOBr: Double = 95.921076
-            val C2H4: Double = 28.031300
-            val CH3OH: Double = 32.026215
-            val CH3Br: Double = 93.941811
-            val CH3CN: Double = 41.026549
-            val CF4: Double = 87.993616
-            val C4H2: Double = 50.015650
-            val HC3N: Double = 51.010899
-            val H2: Double = 2.015650
-            val CS: Double = 43.971036
-            val SO3: Double = 79.956820
-            val C2N2: Double = 52.006148
-            val COCl2: Double = 97.932620
-        }
-
+    override fun drawPlot(directTaskDto: DirectTaskDto): Int {
         val xy = createXY(directTaskDto.vmin, directTaskDto.vmax)
         val xData: DoubleArray = xy[0]
         var yData: DoubleArray = xy[1]
@@ -85,12 +34,66 @@ class HitranServiceImpl(
                 betta = dataBaseMock[i].betta,
                 p = directTaskDto.p,
                 T = directTaskDto.T,
-                concentration = getConcentration(dataBaseMock[i], directTaskDto.concentration),
                 l = directTaskDto.l,
-                M = molarMass.O2
+                concentration = getConcentration(dataBaseMock[i], directTaskDto.concentration),
+                M = getMolarMass(dataBaseMock[i])
             )
         }
         plot(xData = xData, yData = yData)
+        return findConcentration(xData, yData, xy[1], directTaskDto)
+    }
+
+    override fun findConcentration(x: DoubleArray, y: DoubleArray, emptyY: DoubleArray, directTaskDto: DirectTaskDto): Int {
+        //обратная задача
+        var yDataPercent: DoubleArray
+        val percentStep = 0.001
+        var percent = 0.0
+        var sum: Double
+        var sumPrev = 0.0
+        while (percent < 1.0) {
+            sum = 0.0
+            yDataPercent = emptyY
+            for (i in 0..9) {
+                yDataPercent = createSingleLine(
+                    xData = x,
+                    yData = yDataPercent,
+                    // Return from repo
+                    v = dataBaseMock[i].v,
+                    S_Tref = dataBaseMock[i].S_Tref,
+                    A = dataBaseMock[i].A,
+                    yair = dataBaseMock[i].yair,
+                    yself = dataBaseMock[i].yself,
+                    E2shtreha = dataBaseMock[i].E2shtreha,
+                    n = dataBaseMock[i].n,
+                    betta = dataBaseMock[i].betta,
+                    p = directTaskDto.p,
+                    T = directTaskDto.T,
+                    l = directTaskDto.l,
+                    concentration = getConcentration(dataBaseMock[i], directTaskDto.concentration),
+                    M = getMolarMass(dataBaseMock[i])
+                )
+            }
+            for (i in 1..(y.size - 1)) {
+                sum += abs(y[i] - yDataPercent[i])
+            }
+            if (!percent.equals(0.0)  && sum - sumPrev > 0) {
+                return floor((percent - percentStep) * 100.0).toInt()
+            }
+            sumPrev = sum
+            percent += percentStep
+        }
+
+        return 0
+    }
+
+    private fun getMolarMass( dataBaseMock: Line): Double {
+        return when (dataBaseMock) {
+            is H2O -> molarMass.H2O
+            is CO2 -> molarMass.CO2
+            is O2 -> molarMass.O2
+            is N2 -> molarMass.N2
+            else -> throw UnexpectedTypeException()
+        }
     }
 
     private fun getConcentration(dataBaseMock: Line, concentration: ConcentrationMock): Double {
@@ -116,10 +119,9 @@ class HitranServiceImpl(
         return arrayOf(plotX, plotY)
     }
 
-    private fun createSingleLine(xData: DoubleArray, yData: DoubleArray, v: Double,
-                                 S_Tref: Double, A: Double, yair: Double, yself: Double,
-                                 E2shtreha: Double, n: Double, betta: Double, p: Double,
-                                 T: Double, concentration: Double, l: Double, M: Double): DoubleArray {
+    private fun createSingleLine(xData: DoubleArray, yData: DoubleArray, v: Double, S_Tref: Double, A: Double, yair: Double,
+                                 yself: Double, E2shtreha: Double, n: Double, betta: Double, p: Double,
+                                 T: Double, l: Double, concentration: Double, M: Double): DoubleArray {
         //1)
         //Не могу раccчитать, временно не учитываем
         val Q_Tref: Double = 1.0 //заменить на Q(Tref)
@@ -151,7 +153,7 @@ class HitranServiceImpl(
     }
 
     private fun plot(xData: DoubleArray, yData: DoubleArray) {
-        val chart = QuickChart.getChart("Sample Chart", "X", "Y", "y(x)", xData, yData)
+        val chart = QuickChart.getChart("H2O", "Wave Number", "Intensity", "S(V)", xData, yData)
         SwingWrapper(chart).displayChart()
         // Save it
         //BitmapEncoder.saveBitmap(chart, "./Sample_Chart", BitmapFormat.PNG)
@@ -193,5 +195,7 @@ class HitranServiceImpl(
         const val C2: Double = 1.4387770 // (cm*K)
         const val T_REF: Double = 296.0 // default
         const val P_REF: Double = 1.0 // default
+
+        val molarMass = MolarMassMock()
     }
 }

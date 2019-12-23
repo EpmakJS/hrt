@@ -10,10 +10,62 @@ data class DirectTaskDto(
 )
 
 data class ConcentrationMock(
-    val O2: Double = 0.26,
     val H2O: Double = 0.02,
-    val N2: Double = 0.54,
-    val CO2: Double = 0.18
+    val CO2: Double = 0.18,
+    val O2: Double = 0.26,
+    val N2: Double = 0.54
+)
+
+data class MolarMassMock(
+    val H2O: Double = 18.010565,
+    val CO2: Double = 43.989830,
+    val O3: Double = 47.984745,
+    val N2O: Double = 44.001062,
+    val CO: Double = 27.994915,
+    val CH4: Double = 16.031300,
+    val O2: Double = 31.989830,
+    val NO: Double = 29.997989,
+    val SO2: Double = 63.961901,
+    val NO2: Double = 45.992904,
+    val NH3: Double = 17.026549,
+    val NHO3: Double = 62.995644,
+    val OH: Double = 17.002740,
+    val HF: Double = 20.006229,
+    val HCL: Double = 35.976678,
+    val HBr: Double = 79.926160,
+    val HI: Double = 127.912297,
+    val ClO: Double = 50.963768,
+    val OCS: Double = 59.966986,
+    val H2CO: Double = 30.010565,
+    val HOCl: Double = 51.971593,
+    val N2: Double = 28.006148,
+    val HCN: Double = 27.010899,
+    val CH3Cl: Double = 49.992328,
+    val H2O2: Double = 34.005480,
+    val C2H2: Double = 26.015650,
+    val C2H6: Double = 30.046950,
+    val PH3: Double = 33.997238,
+    val COF2: Double = 65.991722,
+    val SF6: Double = 145.962492,
+    val H2S: Double = 33.987721,
+    val HCOOH: Double = 46.005480,
+    val HO2: Double = 32.997655,
+    val O: Double = 15.994915,
+    val ClONO2: Double = 96.956672,
+    val NOplus: Double = 29.997989,
+    val HOBr: Double = 95.921076,
+    val C2H4: Double = 28.031300,
+    val CH3OH: Double = 32.026215,
+    val CH3Br: Double = 93.941811,
+    val CH3CN: Double = 41.026549,
+    val CF4: Double = 87.993616,
+    val C4H2: Double = 50.015650,
+    val HC3N: Double = 51.010899,
+    val H2: Double = 2.015650,
+    val CS: Double = 43.971036,
+    val SO3: Double = 79.956820,
+    val C2N2: Double = 52.006148,
+    val COCl2: Double = 97.932620
 )
 
 interface Line {
