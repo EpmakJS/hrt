@@ -1,12 +1,18 @@
+#!/usr/bin/env python3
+
 import re
 import psycopg2
 import numpy as np
-from psycopg2 import sql
-from psycopg2._psycopg import quote_ident
 from psycopg2.extras import DictCursor
 
-conn = psycopg2.connect(dbname='hrt', user='postgres',
-                        password='postgres', host='localhost')
+
+conn = psycopg2.connect(
+    dbname='hrt',
+    user='postgres',
+    password='postgres',
+    host='localhost',
+    port=5432
+)
 cursor = conn.cursor(cursor_factory=DictCursor)
 
 row_data_array = []
@@ -60,12 +66,12 @@ def insert_data_to_database(path, table_name):
     array = convert_data_types(get_array_of_data_from_file(path))
     for data in array:
         data_tuple = tuple(data)
-        stmt = f"INSERT INTO \"{table_name}\" values {data_tuple}"
+        stmt = f'INSERT INTO \'{table_name}\' values {data_tuple}'
         try:
             cursor.execute(stmt)
             conn.commit()
         except Exception as e:
-            print(e.__class__)
+            print(f'Error: {e}')
 
 
 insert_data_to_database('files/01_hit12.par', '1')
