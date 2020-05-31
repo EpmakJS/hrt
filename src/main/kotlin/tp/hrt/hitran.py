@@ -6,20 +6,24 @@ import numpy as np
 from psycopg2.extras import DictCursor
 
 
-conn = psycopg2.connect(
-    dbname='hrt',
-    user='postgres',
-    password='postgres',
-    host='localhost',
-    port=5432
-)
-cursor = conn.cursor(cursor_factory=DictCursor)
+def insert_data_from_file_to_database_table(file_path, table_name):
+    array = __convert_data_types(__get_array_of_data_from_file(file_path))
+    for data in array:
+        connection = __get_connection()
+        cursor = __get_cursor(connection=connection)
+        data_tuple = tuple(data)
+        stmt = f"INSERT INTO \"{table_name}\" values {data_tuple}"
+        try:
+            __execute_statement(stmt, connection, cursor)
+        except Exception as e:
+            print(f'Error: {e}')
+        finally:
+            cursor.close()
+            connection.close()
 
-row_data_array = []
-data_array = []
 
-
-def get_array_of_data_from_file(path):
+def __get_array_of_data_from_file(path):
+    row_data_array = []
     with open(path, 'r', encoding='utf-8') as i_f:
         lines = i_f.read().splitlines()
         pattern = re.compile(
@@ -35,7 +39,8 @@ def get_array_of_data_from_file(path):
     return row_data_array
 
 
-def convert_data_types(arrays):
+def __convert_data_types(arrays):
+    data_array = []
     for array in arrays:
         values = []
         arr = np.asarray(array)
@@ -62,22 +67,34 @@ def convert_data_types(arrays):
     return data_array
 
 
-def insert_data_to_database(path, table_name):
-    array = convert_data_types(get_array_of_data_from_file(path))
-    for data in array:
-        data_tuple = tuple(data)
-        stmt = f'INSERT INTO \'{table_name}\' values {data_tuple}'
-        try:
-            cursor.execute(stmt)
-            conn.commit()
-        except Exception as e:
-            print(f'Error: {e}')
+def __get_connection():
+    connection = psycopg2.connect(
+        dbname='hrt',
+        user='postgres',
+        password='postgres',
+        host='localhost',
+        port=5432
+    )
+    connection.autocommit = True
+    return connection
 
 
-insert_data_to_database('files/01_hit12.par', '1')
-insert_data_to_database('files/02_hit12.par', '2')
-insert_data_to_database('files/07_hit12.par', '7')
-insert_data_to_database('files/34_hit08.par', '34')
+def __get_cursor(connection):
+    return connection.cursor(cursor_factory=DictCursor)
 
-cursor.close()
-conn.close()
+
+def __execute_statement(statement, connection, cursor):
+    try:
+        cursor.execute(statement)
+    except Exception as e:
+        print(f'Error: {e}')
+    else:
+        connection.commit()
+
+
+insert_data_from_file_to_database_table('files/01_hit12.par', '1')
+
+# insert_data_from_file_to_database_table('files/01_hit12.par', '1')
+# insert_data_to_database('files/02_hit12.par', '2')
+# insert_data_to_database('files/07_hit12.par', '7')
+# insert_data_to_database('files/34_hit08.par', '34')

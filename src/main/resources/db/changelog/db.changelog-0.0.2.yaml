@@ -10,12 +10,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: mol_id
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
+                    primaryKey: true
                   name: iso_number
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
@@ -23,15 +24,23 @@ databaseChangeLog:
                   name: vacuum_wavenumber
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: intensity
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: einstein_a
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_air
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_self
                   type: REAL
               - column:
@@ -57,10 +66,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: i_err
-                  type: INT
+                  type: BIGINT
               - column:
                   name: i_ref
-                  type: INT
+                  type: BIGINT
               - column:
                   name: flag
                   type: VARCHAR(255)
@@ -91,12 +100,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: mol_id
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
+                    primaryKey: true
                   name: iso_number
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
@@ -104,15 +114,23 @@ databaseChangeLog:
                   name: vacuum_wavenumber
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: intensity
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: einstein_a
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_air
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_self
                   type: REAL
               - column:
@@ -138,10 +156,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: i_err
-                  type: INT
+                  type: BIGINT
               - column:
                   name: i_ref
-                  type: INT
+                  type: BIGINT
               - column:
                   name: flag
                   type: VARCHAR(255)
@@ -172,12 +190,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: mol_id
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
+                    primaryKey: true
                   name: iso_number
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
@@ -185,15 +204,23 @@ databaseChangeLog:
                   name: vacuum_wavenumber
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: intensity
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: einstein_a
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_air
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_self
                   type: REAL
               - column:
@@ -219,10 +246,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: i_err
-                  type: INT
+                  type: BIGINT
               - column:
                   name: i_ref
-                  type: INT
+                  type: BIGINT
               - column:
                   name: flag
                   type: VARCHAR(255)
@@ -253,12 +280,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: mol_id
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
+                    primaryKey: true
                   name: iso_number
-                  type: INT
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
@@ -266,15 +294,23 @@ databaseChangeLog:
                   name: vacuum_wavenumber
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: intensity
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: einstein_a
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_air
                   type: REAL
               - column:
+                  constraints:
+                    primaryKey: true
                   name: gamma_self
                   type: REAL
               - column:
@@ -300,10 +336,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: i_err
-                  type: INT
+                  type: BIGINT
               - column:
                   name: i_ref
-                  type: INT
+                  type: BIGINT
               - column:
                   name: flag
                   type: VARCHAR(255)
