@@ -2247,8 +2247,8 @@ databaseChangeLog:
                   type: REAL
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: 14
-            constraintName: fk_14_molecule
+            baseTableName: 24
+            constraintName: fk_24_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3939,8 +3939,8 @@ databaseChangeLog:
                   type: REAL
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: 12
-            constraintName: fk_12_molecule
+            baseTableName: 42
+            constraintName: fk_42_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -4033,8 +4033,8 @@ databaseChangeLog:
                   type: REAL
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: 13
-            constraintName: fk_13_molecule
+            baseTableName: 43
+            constraintName: fk_43_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
