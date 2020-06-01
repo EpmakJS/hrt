@@ -59,9 +59,13 @@ databaseChangeLog:
                   name: lower_state_global_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: upper_state_local_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: lower_state_local_quanta
                   type: VARCHAR(255)
               - column:
@@ -149,9 +153,13 @@ databaseChangeLog:
                   name: lower_state_global_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: upper_state_local_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: lower_state_local_quanta
                   type: VARCHAR(255)
               - column:
@@ -239,9 +247,13 @@ databaseChangeLog:
                   name: lower_state_global_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: upper_state_local_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: lower_state_local_quanta
                   type: VARCHAR(255)
               - column:
@@ -329,9 +341,13 @@ databaseChangeLog:
                   name: lower_state_global_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: upper_state_local_quanta
                   type: VARCHAR(255)
               - column:
+                  constraints:
+                    primaryKey: true
                   name: lower_state_local_quanta
                   type: VARCHAR(255)
               - column:
