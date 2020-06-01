@@ -188,6 +188,382 @@ databaseChangeLog:
             referencedColumnNames: mol_id
             referencedTableName: molecule
   - changeSet:
+      id: 3
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 3
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 3
+            constraintName: fk_3_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 4
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 4
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 4
+            constraintName: fk_4_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 5
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 5
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 5
+            constraintName: fk_5_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 6
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 6
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 6
+            constraintName: fk_6_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
       id: 7
       author: v.ermakov
       changes:
@@ -275,6 +651,1228 @@ databaseChangeLog:
             baseColumnNames: mol_id
             baseTableName: 7
             constraintName: fk_7_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 8
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 8
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 8
+            constraintName: fk_8_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 9
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 9
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 9
+            constraintName: fk_9_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 10
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 10
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 10
+            constraintName: fk_10_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 11
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 11
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 11
+            constraintName: fk_11_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 12
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 12
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 12
+            constraintName: fk_12_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 13
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 13
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 13
+            constraintName: fk_13_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 14
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 14
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 14
+            constraintName: fk_14_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 15
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 15
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 15
+            constraintName: fk_15_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 16
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 16
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 16
+            constraintName: fk_16_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 17
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 17
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 17
+            constraintName: fk_17_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 18
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 18
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 18
+            constraintName: fk_18_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 19
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 19
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 19
+            constraintName: fk_19_molecule
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: mol_id
+            referencedTableName: molecule
+  - changeSet:
+      id: 20
+      author: v.ermakov
+      changes:
+        - createTable:
+            tableName: 20
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: mol_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: iso_number
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: vacuum_wavenumber
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: intensity
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: einstein_a
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_air
+                  type: REAL
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: gamma_self
+                  type: REAL
+              - column:
+                  name: lower_state_energy
+                  type: REAL
+              - column:
+                  name: temperature_dependence
+                  type: REAL
+              - column:
+                  name: air_pressure
+                  type: REAL
+              - column:
+                  name: upper_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: lower_state_global_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: upper_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: lower_state_local_quanta
+                  type: VARCHAR(255)
+              - column:
+                  name: i_err
+                  type: BIGINT
+              - column:
+                  name: i_ref
+                  type: BIGINT
+              - column:
+                  name: flag
+                  type: VARCHAR(255)
+              - column:
+                  name: g_upper
+                  type: REAL
+              - column:
+                  name: g_lower
+                  type: REAL
+        - addForeignKeyConstraint:
+            baseColumnNames: mol_id
+            baseTableName: 20
+            constraintName: fk_20_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
