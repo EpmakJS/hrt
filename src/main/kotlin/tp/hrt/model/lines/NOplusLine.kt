@@ -67,6 +67,6 @@ class NOplusLineId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -19688L
+        private const val serialVersionUID = -19691L
     }
 }

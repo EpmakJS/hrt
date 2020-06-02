@@ -67,6 +67,6 @@ class OLineId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -19688L
+        private const val serialVersionUID = -19692L
     }
 }

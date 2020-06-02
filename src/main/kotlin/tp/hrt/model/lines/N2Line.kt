@@ -67,6 +67,6 @@ class N2LineId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -19688L
+        private const val serialVersionUID = -19690L
     }
 }

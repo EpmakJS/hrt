@@ -67,6 +67,6 @@ class CSLineId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -19688L
+        private const val serialVersionUID = -19689L
     }
 }

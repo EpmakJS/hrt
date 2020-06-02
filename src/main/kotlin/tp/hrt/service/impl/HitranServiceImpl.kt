@@ -136,7 +136,7 @@ class HitranServiceImpl(
             //4)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(S_T * l * fL(x = xData[i], y_p_T = y_p_T, v_corrected = vCorrected) + yData[i])
+                newY += doubleArrayOf(S_T * l * fL(x = xData[i], y_p_T = y_p_T, v_corrected = vCorrected) * concentration + yData[i])
             }
             return newY
         } else {
@@ -146,7 +146,7 @@ class HitranServiceImpl(
             //3)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(S_T * l * fG(x = xData[i], aD_T = aD_T, v = v) + yData[i])
+                newY += doubleArrayOf(S_T * l * fG(x = xData[i], aD_T = aD_T, v = v) * concentration + yData[i])
             }
             return newY
         }
