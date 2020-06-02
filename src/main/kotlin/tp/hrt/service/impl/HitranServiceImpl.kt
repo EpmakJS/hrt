@@ -4,11 +4,24 @@ package tp.hrt.service.impl
 import org.knowm.xchart.QuickChart
 import org.knowm.xchart.SwingWrapper
 import org.springframework.stereotype.Service
-import tp.hrt.createSingleLane
-import tp.hrt.dto.*
+import tp.hrt.dto.CO2
+import tp.hrt.dto.ConcentrationMock
+import tp.hrt.dto.DirectTaskDto
+import tp.hrt.dto.H2O
+import tp.hrt.dto.Line
+import tp.hrt.dto.MolarMassMock
+import tp.hrt.dto.N2
+import tp.hrt.dto.O2
+import tp.hrt.dto.dataBaseMock
 import tp.hrt.service.HitranService
 import javax.validation.UnexpectedTypeException
-import kotlin.math.*
+import kotlin.math.PI
+import kotlin.math.abs
+import kotlin.math.exp
+import kotlin.math.floor
+import kotlin.math.ln
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 @Service
 class HitranServiceImpl(
@@ -136,7 +149,7 @@ class HitranServiceImpl(
             //4)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(S_T * l * fL(x = xData[i], y_p_T = y_p_T, v_corrected = vCorrected) + yData[i])
+                newY += doubleArrayOf(S_T * l * fL(x = xData[i], y_p_T = y_p_T, v_corrected = vCorrected) * concentration + yData[i])
             }
             return newY
         } else {
@@ -146,7 +159,7 @@ class HitranServiceImpl(
             //3)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(S_T * l * fG(x = xData[i], aD_T = aD_T, v = v) + yData[i])
+                newY += doubleArrayOf(S_T * l * fG(x = xData[i], aD_T = aD_T, v = v) * concentration + yData[i])
             }
             return newY
         }

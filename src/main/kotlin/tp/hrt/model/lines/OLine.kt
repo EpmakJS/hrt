@@ -12,11 +12,11 @@ import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "n2-lines")
-class N2Line : Serializable {
+@Table(name = "o-lines")
+class OLine : Serializable {
 
     @EmbeddedId
-    lateinit var n2LineId: N2LineId
+    lateinit var oLineId: OLineId
 
     @Column(name = "lower_state_energy", nullable = false)
     val lowerStateEnergy: Double = 0.0
@@ -55,7 +55,7 @@ class N2Line : Serializable {
 }
 
 @Embeddable
-class N2LineId(
+class OLineId(
     @Column(name = "iso_number", nullable = false) val isoNumber: Long,
     @Column(name = "vacuum_wavenumber", nullable = false) val vacuumWavenumber: Double,
     @Column(name = "intensity", nullable = false) val intensity: Double,
@@ -67,6 +67,6 @@ class N2LineId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -19690L
+        private const val serialVersionUID = -19692L
     }
 }
