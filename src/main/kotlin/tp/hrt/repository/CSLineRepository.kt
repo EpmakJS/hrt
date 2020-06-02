@@ -8,5 +8,5 @@ import tp.hrt.model.lines.CSLineId
 @Repository
 interface CSLineRepository : JpaRepository<CSLine, CSLineId> {
 
-    fun findFirstByCSLineIdVacuumWavenumber(vacuumWavenumber: Double): CSLine
+    fun findFirstByCsLineIdVacuumWavenumber(vacuumWavenumber: Double): CSLine
 }

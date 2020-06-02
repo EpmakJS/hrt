@@ -16,7 +16,7 @@ import javax.persistence.Table
 class CH3CNLine : Serializable {
 
     @EmbeddedId
-    lateinit var CH3CNLineId: N2LineId
+    lateinit var ch3cnLineId: CH3CNLineId
 
     @Column(name = "lower_state_energy", nullable = false)
     val lowerStateEnergy: Double = 0.0
