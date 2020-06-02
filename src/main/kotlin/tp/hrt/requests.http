@@ -28,4 +28,14 @@ Content-Type: application/json
   "l": 1.0
 }
 
-###
+### GET request to gave molecule with id = 22
+GET http://localhost:8080/hitran/molecule/22
+Content-Type: application/json
+
+### GET request to gave all molecule
+GET http://localhost:8080/hitran/molecule
+Content-Type: application/json
+
+### GET request to gave all molecule
+GET http://localhost:8080/hitran/molecule/n2/line/by-vacuum-wavenumber/11.541466
+Content-Type: application/json

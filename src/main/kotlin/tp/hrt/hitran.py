@@ -92,9 +92,8 @@ def __execute_statement(statement, connection, cursor):
         connection.commit()
 
 
-insert_data_from_file_to_database_table('files/01_hit12.par', '1')
-
-# insert_data_from_file_to_database_table('files/01_hit12.par', '1')
-# insert_data_to_database('files/02_hit12.par', '2')
-# insert_data_to_database('files/07_hit12.par', '7')
-# insert_data_to_database('files/34_hit08.par', '34')
+insert_data_from_file_to_database_table('files/22_hit12.par', 'n2')
+# insert_data_from_file_to_database_table('files/34_hit08.par', '34')
+# insert_data_from_file_to_database_table('files/36_hit12.par', '36')
+# insert_data_from_file_to_database_table('files/41_hit08.par', '41')
+# insert_data_from_file_to_database_table('files/46_hit12.par', '46')

@@ -22,36 +22,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -79,10 +79,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 1
@@ -116,36 +116,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -173,10 +173,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 2
@@ -210,36 +210,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -267,10 +267,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 3
@@ -304,36 +304,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -361,10 +361,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 4
@@ -398,36 +398,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -455,10 +455,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 5
@@ -492,36 +492,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -549,10 +549,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 6
@@ -586,36 +586,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -643,10 +643,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 7
@@ -680,36 +680,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -737,10 +737,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 8
@@ -774,36 +774,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -831,10 +831,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 9
@@ -868,36 +868,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -925,10 +925,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 10
@@ -962,36 +962,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1019,10 +1019,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 11
@@ -1056,36 +1056,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1113,10 +1113,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 12
@@ -1150,36 +1150,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1207,10 +1207,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 13
@@ -1244,36 +1244,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1301,10 +1301,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 14
@@ -1338,36 +1338,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1395,10 +1395,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 15
@@ -1432,36 +1432,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1489,10 +1489,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 16
@@ -1526,36 +1526,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1583,10 +1583,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 17
@@ -1620,36 +1620,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1677,10 +1677,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 18
@@ -1714,36 +1714,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1771,10 +1771,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 19
@@ -1808,36 +1808,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1865,10 +1865,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 20
@@ -1902,36 +1902,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -1959,10 +1959,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 21
@@ -1978,7 +1978,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: 22
+            tableName: N2
             columns:
               - column:
                   constraints:
@@ -1996,36 +1996,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2053,14 +2053,14 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: 22
-            constraintName: fk_22_molecule
+            baseTableName: N2
+            constraintName: fk_N2_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2090,36 +2090,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2147,10 +2147,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 23
@@ -2184,36 +2184,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2241,10 +2241,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 24
@@ -2278,36 +2278,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2335,10 +2335,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 25
@@ -2372,36 +2372,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2429,10 +2429,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 26
@@ -2466,36 +2466,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2523,10 +2523,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 27
@@ -2560,36 +2560,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2617,10 +2617,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 28
@@ -2654,36 +2654,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2711,10 +2711,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 29
@@ -2748,36 +2748,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2805,10 +2805,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 30
@@ -2842,36 +2842,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2899,10 +2899,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 31
@@ -2936,36 +2936,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -2993,10 +2993,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 32
@@ -3030,36 +3030,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3087,10 +3087,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 33
@@ -3124,36 +3124,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3181,10 +3181,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 34
@@ -3218,36 +3218,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3275,10 +3275,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 35
@@ -3312,36 +3312,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3369,10 +3369,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 36
@@ -3406,36 +3406,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3463,10 +3463,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 37
@@ -3500,36 +3500,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3557,10 +3557,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 38
@@ -3594,36 +3594,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3651,10 +3651,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 39
@@ -3688,36 +3688,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3745,10 +3745,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 40
@@ -3782,36 +3782,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3839,10 +3839,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 41
@@ -3876,36 +3876,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -3933,10 +3933,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 42
@@ -3970,36 +3970,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -4027,10 +4027,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 43
@@ -4064,36 +4064,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -4121,10 +4121,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 44
@@ -4158,36 +4158,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -4215,10 +4215,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 45
@@ -4252,36 +4252,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -4309,10 +4309,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 46
@@ -4346,36 +4346,36 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                   name: vacuum_wavenumber
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: intensity
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: einstein_a
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_air
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   constraints:
                     primaryKey: true
                   name: gamma_self
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: lower_state_energy
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: temperature_dependence
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: air_pressure
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: upper_state_global_quanta
                   type: VARCHAR(255)
@@ -4403,10 +4403,10 @@ databaseChangeLog:
                   type: VARCHAR(255)
               - column:
                   name: g_upper
-                  type: REAL
+                  type: DOUBLE PRECISION
               - column:
                   name: g_lower
-                  type: REAL
+                  type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
             baseTableName: 47
