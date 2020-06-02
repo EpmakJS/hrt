@@ -4,7 +4,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: H2O
+            tableName: h2o-lines
             columns:
               - column:
                   constraints:
@@ -85,8 +85,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: H2O
-            constraintName: fk_H2O_molecule
+            baseTableName: h2o-lines
+            constraintName: fk_h2o_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -98,7 +98,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CO2
+            tableName: co2-lines
             columns:
               - column:
                   constraints:
@@ -179,8 +179,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CO2
-            constraintName: fk_CO2_molecule
+            baseTableName: co2-lines
+            constraintName: fk_co2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -192,7 +192,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: O3
+            tableName: o3-lines
             columns:
               - column:
                   constraints:
@@ -273,8 +273,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: O3
-            constraintName: fk_O3_molecule
+            baseTableName: o3-lines
+            constraintName: fk_o3_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -286,7 +286,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: N2O
+            tableName: n2o-lines
             columns:
               - column:
                   constraints:
@@ -367,8 +367,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: N2O
-            constraintName: fk_N2O_molecule
+            baseTableName: n2o-lines
+            constraintName: fk_n2o_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -380,7 +380,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CO
+            tableName: co-lines
             columns:
               - column:
                   constraints:
@@ -461,8 +461,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CO
-            constraintName: fk_CO_molecule
+            baseTableName: co-lines
+            constraintName: fk_co_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -474,7 +474,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CH4
+            tableName: ch4-lines
             columns:
               - column:
                   constraints:
@@ -555,8 +555,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CH4
-            constraintName: fk_CH4_molecule
+            baseTableName: ch4-lines
+            constraintName: fk_ch4_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -568,7 +568,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: O2
+            tableName: o2-lines
             columns:
               - column:
                   constraints:
@@ -649,8 +649,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: O2
-            constraintName: fk_O2_molecule
+            baseTableName: o2-lines
+            constraintName: fk_o2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -662,7 +662,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: NO
+            tableName: no-lines
             columns:
               - column:
                   constraints:
@@ -743,8 +743,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: NO
-            constraintName: fk_NO_molecule
+            baseTableName: no-lines
+            constraintName: fk_no_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -756,7 +756,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: SO2
+            tableName: so2-lines
             columns:
               - column:
                   constraints:
@@ -837,8 +837,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: SO2
-            constraintName: fk_SO2_molecule
+            baseTableName: so2-lines
+            constraintName: fk_so2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -850,7 +850,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: NO2
+            tableName: no2-lines
             columns:
               - column:
                   constraints:
@@ -931,8 +931,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: NO2
-            constraintName: fk_NO2_molecule
+            baseTableName: no2-lines
+            constraintName: fk_no2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -944,7 +944,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: NH3
+            tableName: nh3-lines
             columns:
               - column:
                   constraints:
@@ -1025,8 +1025,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: NH3
-            constraintName: fk_NH3_molecule
+            baseTableName: nh3-lines
+            constraintName: fk_nh3_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1038,7 +1038,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HNO3
+            tableName: hno3-lines
             columns:
               - column:
                   constraints:
@@ -1119,8 +1119,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HNO3
-            constraintName: fk_HNO3_molecule
+            baseTableName: hno3-lines
+            constraintName: fk_hno3_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1132,7 +1132,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: OH
+            tableName: oh-lines
             columns:
               - column:
                   constraints:
@@ -1213,8 +1213,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: OH
-            constraintName: fk_OH_molecule
+            baseTableName: oh-lines
+            constraintName: fk_oh_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1226,7 +1226,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HF
+            tableName: hf-lines
             columns:
               - column:
                   constraints:
@@ -1307,8 +1307,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HF
-            constraintName: fk_HF_molecule
+            baseTableName: hf-lines
+            constraintName: fk_hf_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1320,7 +1320,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HCl
+            tableName: hcl-lines
             columns:
               - column:
                   constraints:
@@ -1401,8 +1401,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HCl
-            constraintName: fk_HCl_molecule
+            baseTableName: hcl-lines
+            constraintName: fk_hcl_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1414,7 +1414,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HBr
+            tableName: hbr-lines
             columns:
               - column:
                   constraints:
@@ -1495,8 +1495,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HBr
-            constraintName: fk_HBr_molecule
+            baseTableName: hbr-lines
+            constraintName: fk_hbr_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1508,7 +1508,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HI
+            tableName: hi-lines
             columns:
               - column:
                   constraints:
@@ -1589,8 +1589,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HI
-            constraintName: fk_HI_molecule
+            baseTableName: hi-lines
+            constraintName: fk_hi_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1602,7 +1602,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: ClO
+            tableName: clo-lines
             columns:
               - column:
                   constraints:
@@ -1683,8 +1683,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: ClO
-            constraintName: fk_ClO_molecule
+            baseTableName: clo-lines
+            constraintName: fk_clo_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1696,7 +1696,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: OCS
+            tableName: ocs-lines
             columns:
               - column:
                   constraints:
@@ -1777,8 +1777,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: OCS
-            constraintName: fk_OCS_molecule
+            baseTableName: ocs-lines
+            constraintName: fk_ocs_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1790,7 +1790,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: H2CO
+            tableName: h2co-lines
             columns:
               - column:
                   constraints:
@@ -1871,8 +1871,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: H2CO
-            constraintName: fk_H2CO_molecule
+            baseTableName: h2co-lines
+            constraintName: fk_h2co_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1884,7 +1884,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HOCl
+            tableName: hocl-lines
             columns:
               - column:
                   constraints:
@@ -1965,8 +1965,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HOCl
-            constraintName: fk_HOCl_molecule
+            baseTableName: hocl-lines
+            constraintName: fk_hocl_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -1978,7 +1978,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: N2
+            tableName: n2-lines
             columns:
               - column:
                   constraints:
@@ -2059,8 +2059,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: N2
-            constraintName: fk_N2_molecule
+            baseTableName: n2-lines
+            constraintName: fk_n2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2072,7 +2072,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HCN
+            tableName: hcn-lines
             columns:
               - column:
                   constraints:
@@ -2153,8 +2153,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HCN
-            constraintName: fk_HCN_molecule
+            baseTableName: hcn-lines
+            constraintName: fk_hcn_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2166,7 +2166,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CH3Cl
+            tableName: ch3cl-lines
             columns:
               - column:
                   constraints:
@@ -2247,8 +2247,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CH3Cl
-            constraintName: fk_CH3Cl_molecule
+            baseTableName: ch3cl-lines
+            constraintName: fk_ch3cl_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2260,7 +2260,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: H2O2
+            tableName: h2o2-lines
             columns:
               - column:
                   constraints:
@@ -2341,8 +2341,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: H2O2
-            constraintName: fk_H2O2_molecule
+            baseTableName: h2o2-lines
+            constraintName: fk_h2o2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2354,7 +2354,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: C2H2
+            tableName: c2h2-lines
             columns:
               - column:
                   constraints:
@@ -2435,8 +2435,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: C2H2
-            constraintName: fk_C2H2_molecule
+            baseTableName: c2h2-lines
+            constraintName: fk_c2h2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2448,7 +2448,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: C2H6
+            tableName: c2h6-lines
             columns:
               - column:
                   constraints:
@@ -2529,8 +2529,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: C2H6
-            constraintName: fk_C2H6_molecule
+            baseTableName: c2h6-lines
+            constraintName: fk_c2h6_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2542,7 +2542,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: PH3
+            tableName: ph3-lines
             columns:
               - column:
                   constraints:
@@ -2623,8 +2623,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: PH3
-            constraintName: fk_PH3_molecule
+            baseTableName: ph3-lines
+            constraintName: fk_ph3_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2636,7 +2636,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: COF2
+            tableName: cof2-lines
             columns:
               - column:
                   constraints:
@@ -2717,8 +2717,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: COF2
-            constraintName: fk_COF2_molecule
+            baseTableName: cof2-lines
+            constraintName: fk_cof2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2730,7 +2730,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: SF6
+            tableName: sf6-lines
             columns:
               - column:
                   constraints:
@@ -2811,8 +2811,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: SF6
-            constraintName: fk_SF6_molecule
+            baseTableName: sf6-lines
+            constraintName: fk_sf6_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2824,7 +2824,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: H2S
+            tableName: h2s-lines
             columns:
               - column:
                   constraints:
@@ -2905,8 +2905,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: H2S
-            constraintName: fk_H2S_molecule
+            baseTableName: h2s-lines
+            constraintName: fk_h2s_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -2918,7 +2918,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HCOOH
+            tableName: hcooh-lines
             columns:
               - column:
                   constraints:
@@ -2999,8 +2999,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HCOOH
-            constraintName: fk_HCOOH_molecule
+            baseTableName: hcooh-lines
+            constraintName: fk_hcooh_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3012,7 +3012,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HO2
+            tableName: ho2-lines
             columns:
               - column:
                   constraints:
@@ -3093,8 +3093,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HO2
-            constraintName: fk_HO2_molecule
+            baseTableName: ho2-lines
+            constraintName: fk_ho2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3106,7 +3106,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: O
+            tableName: o-lines
             columns:
               - column:
                   constraints:
@@ -3187,8 +3187,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: O
-            constraintName: fk_O_molecule
+            baseTableName: o-lines
+            constraintName: fk_o_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3200,7 +3200,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: ClONO2
+            tableName: clono2-lines
             columns:
               - column:
                   constraints:
@@ -3281,8 +3281,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: ClONO2
-            constraintName: fk_ClONO2_molecule
+            baseTableName: clono2-lines
+            constraintName: fk_clono2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3294,7 +3294,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: NO+
+            tableName: noplus-lines
             columns:
               - column:
                   constraints:
@@ -3375,8 +3375,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: NO+
-            constraintName: fk_NO+_molecule
+            baseTableName: noplus-lines
+            constraintName: fk_noplus_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3388,7 +3388,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: HOBr
+            tableName: hobr-lines
             columns:
               - column:
                   constraints:
@@ -3469,8 +3469,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: HOBr
-            constraintName: fk_HOBr_molecule
+            baseTableName: hobr-lines
+            constraintName: fk_hobr_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3482,7 +3482,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: C2H4
+            tableName: c2h4-lines
             columns:
               - column:
                   constraints:
@@ -3563,8 +3563,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: C2H4
-            constraintName: fk_C2H4_molecule
+            baseTableName: c2h4-lines
+            constraintName: fk_c2h4_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3576,7 +3576,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CH3OH
+            tableName: ch3oh-lines
             columns:
               - column:
                   constraints:
@@ -3657,8 +3657,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CH3OH
-            constraintName: fk_CH3OH_molecule
+            baseTableName: ch3oh-lines
+            constraintName: fk_ch3oh_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3670,7 +3670,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CH3Br
+            tableName: ch3br-lines
             columns:
               - column:
                   constraints:
@@ -3751,8 +3751,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CH3Br
-            constraintName: fk_CH3Br_molecule
+            baseTableName: ch3br-lines
+            constraintName: fk_ch3br_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3764,7 +3764,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CH3CN
+            tableName: ch3cn-lines
             columns:
               - column:
                   constraints:
@@ -3845,8 +3845,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CH3CN
-            constraintName: fk_CH3CN_molecule
+            baseTableName: ch3cn-lines
+            constraintName: fk_ch3cn_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3858,7 +3858,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CF4
+            tableName: cf4-lines
             columns:
               - column:
                   constraints:
@@ -3939,8 +3939,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CF4
-            constraintName: fk_CF4_molecule
+            baseTableName: cf4-lines
+            constraintName: fk_cf4_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -3952,7 +3952,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: C4H2
+            tableName: c4h2-lines
             columns:
               - column:
                   constraints:
@@ -4033,8 +4033,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: C4H2
-            constraintName: fk_C4H2_molecule
+            baseTableName: c4h2-lines
+            constraintName: fk_c4h2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -4046,7 +4046,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CH3N
+            tableName: hc3n-lines
             columns:
               - column:
                   constraints:
@@ -4127,8 +4127,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CH3N
-            constraintName: fk_CH3N_molecule
+            baseTableName: hc3n-lines
+            constraintName: fk_hc3n_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -4140,7 +4140,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: H2
+            tableName: h2-lines
             columns:
               - column:
                   constraints:
@@ -4221,8 +4221,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: H2
-            constraintName: fk_H2_molecule
+            baseTableName: h2-lines
+            constraintName: fk_h2_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -4234,7 +4234,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: CS
+            tableName: cs-lines
             columns:
               - column:
                   constraints:
@@ -4315,8 +4315,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: CS
-            constraintName: fk_CS_molecule
+            baseTableName: cs-lines
+            constraintName: fk_cs_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
@@ -4328,7 +4328,7 @@ databaseChangeLog:
       author: v.ermakov
       changes:
         - createTable:
-            tableName: SO3
+            tableName: so3-lines
             columns:
               - column:
                   constraints:
@@ -4409,8 +4409,8 @@ databaseChangeLog:
                   type: DOUBLE PRECISION
         - addForeignKeyConstraint:
             baseColumnNames: mol_id
-            baseTableName: SO3
-            constraintName: fk_SO3_molecule
+            baseTableName: so3-lines
+            constraintName: fk_so3_lines_molecule
             deferrable: true
             initiallyDeferred: true
             onDelete: RESTRICT
