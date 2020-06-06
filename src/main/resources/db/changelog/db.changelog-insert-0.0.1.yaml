@@ -10,6 +10,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 1
               - column:
+                  name: molar_mass
+                  value: 18.010565
+              - column:
                   name: desc
                   value: "H2O"
         - insert:

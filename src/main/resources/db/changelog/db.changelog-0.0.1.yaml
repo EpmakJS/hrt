@@ -15,6 +15,11 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
+                  name: molar_mass
+                  type: DOUBLE PRECISION
+              - column:
+                  constraints:
+                    nullable: false
                   name: desc
                   type: VARCHAR(255)
   - changeSet:

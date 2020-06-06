@@ -109,5 +109,9 @@ GET http://localhost:8080/hitran/molecule
 Content-Type: application/json
 
 ### GET request to gave all molecule
-GET http://localhost:8080/hitran/molecule/n2/line/by-vacuum-wavenumber/11.541466
+GET http://localhost:8080/hitran/line/n2/by-vacuum-wavenumber/11.541466
+Content-Type: application/json
+
+### GET request to gave all molecule
+GET http://localhost:8080/hitran/line/n2/in-range-by-vacuum-wavenumber?minVacuumWavenumber=10&maxVacuumWavenumber=50
 Content-Type: application/json

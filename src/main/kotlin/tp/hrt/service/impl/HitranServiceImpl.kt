@@ -27,7 +27,7 @@ import kotlin.math.sqrt
 class HitranServiceImpl(
 ) : HitranService {
 
-    override fun drawPlot(directTaskDto: DirectTaskDto): Int {
+    override fun getAbsorptionSpectrumOfGasMixture(directTaskDto: DirectTaskDto) {
         val xy = createXY(directTaskDto.vmin, directTaskDto.vmax)
         val xData: DoubleArray = xy[0]
         var yData: DoubleArray = xy[1]
@@ -53,7 +53,6 @@ class HitranServiceImpl(
             )
         }
         plot(xData = xData, yData = yData)
-        return findConcentration(xData, yData, xy[1], directTaskDto)
     }
 
     override fun findConcentration(x: DoubleArray, y: DoubleArray, emptyY: DoubleArray, directTaskDto: DirectTaskDto): Int {

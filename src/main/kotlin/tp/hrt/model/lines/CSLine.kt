@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "cs-lines")
+@Table(name = "cs_lines")
 class CSLine : Serializable {
 
     @EmbeddedId

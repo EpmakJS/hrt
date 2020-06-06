@@ -92,8 +92,8 @@ def __execute_statement(statement, connection, cursor):
         connection.commit()
 
 
-insert_data_from_file_to_database_table('files/22_hit12.par', 'n2-lines')
-insert_data_from_file_to_database_table('files/34_hit08.par', 'o-lines')
-insert_data_from_file_to_database_table('files/36_hit12.par', 'noplus-lines')
-insert_data_from_file_to_database_table('files/41_hit08.par', 'ch3cn-lines')
-insert_data_from_file_to_database_table('files/46_hit12.par', 'cs-lines')
+insert_data_from_file_to_database_table('files/22_hit12.par', 'n2_lines')
+insert_data_from_file_to_database_table('files/34_hit08.par', 'o_lines')
+insert_data_from_file_to_database_table('files/36_hit12.par', 'noplus_lines')
+insert_data_from_file_to_database_table('files/41_hit08.par', 'ch3cn_lines')
+insert_data_from_file_to_database_table('files/46_hit12.par', 'cs_lines')
