@@ -16,6 +16,9 @@ class Molecule : Serializable {
     @Column(name = "mol_id")
     val id: Int = 0
 
+    @Column(name = "molar_mass")
+    val molarMass: Double = 0.0
+
     @Column(name = "desc")
     val description: String = ""
 

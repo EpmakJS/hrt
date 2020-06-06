@@ -14,6 +14,7 @@ import tp.hrt.dto.N2
 import tp.hrt.dto.O2
 import tp.hrt.dto.dataBaseMock
 import tp.hrt.service.HitranService
+import tp.hrt.service.MoleculeService
 import javax.validation.UnexpectedTypeException
 import kotlin.math.PI
 import kotlin.math.abs
@@ -25,12 +26,37 @@ import kotlin.math.sqrt
 
 @Service
 class HitranServiceImpl(
+    private val moleculeService: MoleculeService
 ) : HitranService {
 
     override fun getAbsorptionSpectrumOfGasMixture(directTaskDto: DirectTaskDto) {
         val xy = createXY(directTaskDto.vmin, directTaskDto.vmax)
         val xData: DoubleArray = xy[0]
         var yData: DoubleArray = xy[1]
+
+//        directTaskDto.concentration.map {
+//            val molecule = moleculeService.findMoleculeById(it.key)
+//
+//
+//            yData = createSingleLine(
+//                xData = xData,
+//                yData = yData,
+//                // Return from repo
+//                v = dataBaseMock[i].v,
+//                S_Tref = dataBaseMock[i].S_Tref,
+//                A = dataBaseMock[i].A,
+//                yair = dataBaseMock[i].yair,
+//                yself = dataBaseMock[i].yself,
+//                E2shtreha = dataBaseMock[i].E2shtreha,
+//                n = dataBaseMock[i].n,
+//                betta = dataBaseMock[i].betta,
+//                p = directTaskDto.p,
+//                T = directTaskDto.T,
+//                l = directTaskDto.l,
+//                concentration = it.value,
+//                M = molecule.molarMass
+//            )
+//        }
 
         for (i in 0..(dataBaseMock.size - 1)) {
             yData = createSingleLine(

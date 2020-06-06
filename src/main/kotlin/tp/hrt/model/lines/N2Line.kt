@@ -1,7 +1,7 @@
 package tp.hrt.model.lines
 
-import com.fasterxml.jackson.annotation.JsonIgnore
 import tp.hrt.model.Molecule
+import tp.hrt.model.lines.LineType.N2
 import java.io.Serializable
 import javax.persistence.Column
 import javax.persistence.Embeddable
@@ -13,7 +13,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "n2_lines")
-class N2Line : Serializable {
+class N2Line : BaseLine() {
 
     @EmbeddedId
     lateinit var n2LineId: N2LineId
@@ -50,8 +50,10 @@ class N2Line : Serializable {
 
     @ManyToOne
     @JoinColumn(name = "mol_id")
-    @JsonIgnore
     lateinit var molecule: Molecule
+
+    @Transient
+    override var lineType: LineType = N2
 }
 
 @Embeddable

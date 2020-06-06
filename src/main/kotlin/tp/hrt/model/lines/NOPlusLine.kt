@@ -2,6 +2,7 @@ package tp.hrt.model.lines
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import tp.hrt.model.Molecule
+import tp.hrt.model.lines.LineType.NO_PLUS
 import java.io.Serializable
 import javax.persistence.Column
 import javax.persistence.Embeddable
@@ -13,7 +14,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "noplus_lines")
-class NOPlusLine : Serializable {
+class NOPlusLine : BaseLine() {
 
     @EmbeddedId
     lateinit var noPlusLineId: NOPlusLineId
@@ -52,6 +53,9 @@ class NOPlusLine : Serializable {
     @JoinColumn(name = "mol_id")
     @JsonIgnore
     lateinit var molecule: Molecule
+
+    @Transient
+    override val lineType: LineType = NO_PLUS
 }
 
 @Embeddable

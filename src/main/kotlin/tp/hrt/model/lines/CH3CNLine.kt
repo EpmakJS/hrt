@@ -2,6 +2,7 @@ package tp.hrt.model.lines
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import tp.hrt.model.Molecule
+import tp.hrt.model.lines.LineType.CH3CN
 import java.io.Serializable
 import javax.persistence.Column
 import javax.persistence.Embeddable
@@ -13,7 +14,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "ch3cn_lines")
-class CH3CNLine : Serializable {
+class CH3CNLine : BaseLine() {
 
     @EmbeddedId
     lateinit var ch3cnLineId: CH3CNLineId
@@ -52,6 +53,9 @@ class CH3CNLine : Serializable {
     @JoinColumn(name = "mol_id")
     @JsonIgnore
     lateinit var molecule: Molecule
+
+    @Transient
+    override val lineType: LineType = CH3CN
 }
 
 @Embeddable

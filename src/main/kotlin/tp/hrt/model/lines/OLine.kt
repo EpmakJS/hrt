@@ -2,6 +2,7 @@ package tp.hrt.model.lines
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import tp.hrt.model.Molecule
+import tp.hrt.model.lines.LineType.O
 import java.io.Serializable
 import javax.persistence.Column
 import javax.persistence.Embeddable
@@ -13,7 +14,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "o_lines")
-class OLine : Serializable {
+class OLine : BaseLine() {
 
     @EmbeddedId
     lateinit var oLineId: OLineId
@@ -52,6 +53,9 @@ class OLine : Serializable {
     @JoinColumn(name = "mol_id")
     @JsonIgnore
     lateinit var molecule: Molecule
+
+    @Transient
+    override val lineType: LineType = O
 }
 
 @Embeddable
