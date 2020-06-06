@@ -22,6 +22,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 2
               - column:
+                  name: molar_mass
+                  value: 43.989830
+              - column:
                   name: desc
                   value: "CO2"
         - insert:
@@ -30,6 +33,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 3
+              - column:
+                  name: molar_mass
+                  value: 47.984745
               - column:
                   name: desc
                   value: "O3"
@@ -40,6 +46,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 4
               - column:
+                  name: molar_mass
+                  value: 44.001062
+              - column:
                   name: desc
                   value: "N2O"
         - insert:
@@ -48,6 +57,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 5
+              - column:
+                  name: molar_mass
+                  value: 27.994915
               - column:
                   name: desc
                   value: "CO"
@@ -58,6 +70,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 6
               - column:
+                  name: molar_mass
+                  value: 16.031300
+              - column:
                   name: desc
                   value: "CH4"
         - insert:
@@ -66,6 +81,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 7
+              - column:
+                  name: molar_mass
+                  value: 31.989830
               - column:
                   name: desc
                   value: "O2"
@@ -76,6 +94,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 8
               - column:
+                  name: molar_mass
+                  value: 29.997989
+              - column:
                   name: desc
                   value: "NO"
         - insert:
@@ -84,6 +105,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 9
+              - column:
+                  name: molar_mass
+                  value: 63.961901
               - column:
                   name: desc
                   value: "SO2"
@@ -94,6 +118,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 10
               - column:
+                  name: molar_mass
+                  value: 45.992904
+              - column:
                   name: desc
                   value: "NO2"
         - insert:
@@ -102,6 +129,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 11
+              - column:
+                  name: molar_mass
+                  value: 17.026549
               - column:
                   name: desc
                   value: "NH3"
@@ -112,6 +142,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 12
               - column:
+                  name: molar_mass
+                  value: 62.995644
+              - column:
                   name: desc
                   value: "HNO3"
         - insert:
@@ -120,6 +153,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 13
+              - column:
+                  name: molar_mass
+                  value: 17.002740
               - column:
                   name: desc
                   value: "OH"
@@ -130,6 +166,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 14
               - column:
+                  name: molar_mass
+                  value: 20.006229
+              - column:
                   name: desc
                   value: "HF"
         - insert:
@@ -138,6 +177,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 15
+              - column:
+                  name: molar_mass
+                  value: 35.976678
               - column:
                   name: desc
                   value: "HCl"
@@ -148,6 +190,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 16
               - column:
+                  name: molar_mass
+                  value: 79.926160
+              - column:
                   name: desc
                   value: "HBr"
         - insert:
@@ -156,6 +201,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 17
+              - column:
+                  name: molar_mass
+                  value: 127.912297
               - column:
                   name: desc
                   value: "HI"
@@ -166,6 +214,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 18
               - column:
+                  name: molar_mass
+                  value: 50.963768
+              - column:
                   name: desc
                   value: "ClO"
         - insert:
@@ -174,6 +225,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 19
+              - column:
+                  name: molar_mass
+                  value: 59.966986
               - column:
                   name: desc
                   value: "OCS"
@@ -184,6 +238,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 20
               - column:
+                  name: molar_mass
+                  value: 30.010565
+              - column:
                   name: desc
                   value: "H2CO"                  
         - insert:
@@ -192,6 +249,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 21
+              - column:
+                  name: molar_mass
+                  value: 51.971593
               - column:
                   name: desc
                   value: "HOCl"
@@ -202,6 +262,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 22
               - column:
+                  name: molar_mass
+                  value: 28.006148
+              - column:
                   name: desc
                   value: "N2"                  
         - insert:
@@ -210,6 +273,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 23
+              - column:
+                  name: molar_mass
+                  value: 27.010899
               - column:
                   name: desc
                   value: "HCN"
@@ -220,6 +286,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 24
               - column:
+                  name: molar_mass
+                  value: 49.992328
+              - column:
                   name: desc
                   value: "CH3Cl"
         - insert:
@@ -228,6 +297,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 25
+              - column:
+                  name: molar_mass
+                  value: 34.005480
               - column:
                   name: desc
                   value: "H2O2"
@@ -238,6 +310,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 26
               - column:
+                  name: molar_mass
+                  value: 26.015650
+              - column:
                   name: desc
                   value: "C2H2"
         - insert:
@@ -246,6 +321,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 27
+              - column:
+                  name: molar_mass
+                  value: 30.046950
               - column:
                   name: desc
                   value: "C2H6"
@@ -256,6 +334,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 28
               - column:
+                  name: molar_mass
+                  value: 33.997238
+              - column:
                   name: desc
                   value: "PH3"
         - insert:
@@ -264,6 +345,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 29
+              - column:
+                  name: molar_mass
+                  value: 65.991722
               - column:
                   name: desc
                   value: "COF2"
@@ -274,6 +358,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 30
               - column:
+                  name: molar_mass
+                  value: 145.962492
+              - column:
                   name: desc
                   value: "SF6"
         - insert:
@@ -282,6 +369,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 31
+              - column:
+                  name: molar_mass
+                  value: 33.987721
               - column:
                   name: desc
                   value: "H2S"
@@ -292,6 +382,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 32
               - column:
+                  name: molar_mass
+                  value: 46.005480
+              - column:
                   name: desc
                   value: "HCOOH"
         - insert:
@@ -300,6 +393,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 33
+              - column:
+                  name: molar_mass
+                  value: 32.997655
               - column:
                   name: desc
                   value: "HO2"
@@ -310,6 +406,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 34
               - column:
+                  name: molar_mass
+                  value: 15.994915
+              - column:
                   name: desc
                   value: "O"
         - insert:
@@ -318,6 +417,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 35
+              - column:
+                  name: molar_mass
+                  value: 96.956672
               - column:
                   name: desc
                   value: "ClONO2"
@@ -328,6 +430,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 36
               - column:
+                  name: molar_mass
+                  value: 29.997989
+              - column:
                   name: desc
                   value: "NO+"
         - insert:
@@ -336,6 +441,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 37
+              - column:
+                  name: molar_mass
+                  value: 95.921076
               - column:
                   name: desc
                   value: "HOBr"
@@ -346,6 +454,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 38
               - column:
+                  name: molar_mass
+                  value: 28.031300
+              - column:
                   name: desc
                   value: "C2H4"
         - insert:
@@ -354,6 +465,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 39
+              - column:
+                  name: molar_mass
+                  value: 32.026215
               - column:
                   name: desc
                   value: "CH3OH"
@@ -364,6 +478,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 40
               - column:
+                  name: molar_mass
+                  value: 93.941811
+              - column:
                   name: desc
                   value: "CH3Br"
         - insert:
@@ -372,6 +489,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 41
+              - column:
+                  name: molar_mass
+                  value: 41.026549
               - column:
                   name: desc
                   value: "CH3CN"
@@ -382,6 +502,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 42
               - column:
+                  name: molar_mass
+                  value: 87.993616
+              - column:
                   name: desc
                   value: "CF4"
         - insert:
@@ -390,6 +513,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 43
+              - column:
+                  name: molar_mass
+                  value: 50.015650
               - column:
                   name: desc
                   value: "C4H2"
@@ -400,6 +526,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 44
               - column:
+                  name: molar_mass
+                  value: 51.010899
+              - column:
                   name: desc
                   value: "HC3N"
         - insert:
@@ -408,6 +537,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 45
+              - column:
+                  name: molar_mass
+                  value: 2.015650
               - column:
                   name: desc
                   value: "H2"
@@ -418,6 +550,9 @@ databaseChangeLog:
                   name: mol_id
                   value: 46
               - column:
+                  name: molar_mass
+                  value: 43.971036
+              - column:
                   name: desc
                   value: "CS"
         - insert:
@@ -426,6 +561,9 @@ databaseChangeLog:
               - column:
                   name: mol_id
                   value: 47
+              - column:
+                  name: molar_mass
+                  value: 79.956820
               - column:
                   name: desc
                   value: "SO3"            
