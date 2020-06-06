@@ -1,6 +1,5 @@
 package tp.hrt.service.impl
 
-
 import org.knowm.xchart.QuickChart
 import org.knowm.xchart.SwingWrapper
 import org.springframework.stereotype.Service
@@ -10,9 +9,19 @@ import tp.hrt.dto.DirectTaskDto
 import tp.hrt.dto.H2O
 import tp.hrt.dto.Line
 import tp.hrt.dto.MolarMassMock
-import tp.hrt.dto.N2
 import tp.hrt.dto.O2
 import tp.hrt.dto.dataBaseMock
+import tp.hrt.model.lines.LineType
+import tp.hrt.model.lines.LineType.CH3CN
+import tp.hrt.model.lines.LineType.CS
+import tp.hrt.model.lines.LineType.N2
+import tp.hrt.model.lines.LineType.NO_PLUS
+import tp.hrt.model.lines.LineType.O
+import tp.hrt.repository.CH3CNLineRepository
+import tp.hrt.repository.CSLineRepository
+import tp.hrt.repository.N2LineRepository
+import tp.hrt.repository.NOPlusLineRepository
+import tp.hrt.repository.OLineRepository
 import tp.hrt.service.HitranService
 import tp.hrt.service.MoleculeService
 import javax.validation.UnexpectedTypeException
@@ -26,7 +35,12 @@ import kotlin.math.sqrt
 
 @Service
 class HitranServiceImpl(
-    private val moleculeService: MoleculeService
+    private val moleculeService: MoleculeService,
+    private val n2LineRepository: N2LineRepository,
+    private val cH3CNLineRepository: CH3CNLineRepository,
+    private val cSLineRepository: CSLineRepository,
+    private val nOPlusLineRepository: NOPlusLineRepository,
+    private val oLineRepository: OLineRepository
 ) : HitranService {
 
     override fun getAbsorptionSpectrumOfGasMixture(directTaskDto: DirectTaskDto) {
@@ -36,7 +50,14 @@ class HitranServiceImpl(
 
 //        directTaskDto.concentration.map {
 //            val molecule = moleculeService.findMoleculeById(it.key)
-//
+//            val repository = when (molecule.type) {
+//                N2 -> n2LineRepository
+//                CH3CN -> cH3CNLineRepository
+//                CS -> cSLineRepository
+//                NO_PLUS -> nOPlusLineRepository
+//                O -> oLineRepository
+//                else -> throw UnexpectedTypeException()
+//            }
 //
 //            yData = createSingleLine(
 //                xData = xData,
@@ -81,7 +102,12 @@ class HitranServiceImpl(
         plot(xData = xData, yData = yData)
     }
 
-    override fun findConcentration(x: DoubleArray, y: DoubleArray, emptyY: DoubleArray, directTaskDto: DirectTaskDto): Int {
+    override fun findConcentration(
+        x: DoubleArray,
+        y: DoubleArray,
+        emptyY: DoubleArray,
+        directTaskDto: DirectTaskDto
+    ): Int {
         //обратная задача
         var yDataPercent: DoubleArray
         val percentStep = 0.001
@@ -114,7 +140,7 @@ class HitranServiceImpl(
             for (i in 1..(y.size - 1)) {
                 sum += abs(y[i] - yDataPercent[i])
             }
-            if (!percent.equals(0.0)  && sum - sumPrev > 0) {
+            if (!percent.equals(0.0) && sum - sumPrev > 0) {
                 return floor((percent - percentStep) * 100.0).toInt()
             }
             sumPrev = sum
@@ -124,12 +150,11 @@ class HitranServiceImpl(
         return 0
     }
 
-    private fun getMolarMass( dataBaseMock: Line): Double {
+    private fun getMolarMass(dataBaseMock: Line): Double {
         return when (dataBaseMock) {
             is H2O -> molarMass.H2O
             is CO2 -> molarMass.CO2
             is O2 -> molarMass.O2
-            is N2 -> molarMass.N2
             else -> throw UnexpectedTypeException()
         }
     }
@@ -139,7 +164,6 @@ class HitranServiceImpl(
             is H2O -> concentration.H2O
             is CO2 -> concentration.CO2
             is O2 -> concentration.O2
-            is N2 -> concentration.N2
             else -> throw UnexpectedTypeException()
         }
     }
@@ -157,9 +181,11 @@ class HitranServiceImpl(
         return arrayOf(plotX, plotY)
     }
 
-    private fun createSingleLine(xData: DoubleArray, yData: DoubleArray, v: Double, S_Tref: Double, A: Double, yair: Double,
-                                 yself: Double, E2shtreha: Double, n: Double, betta: Double, p: Double,
-                                 T: Double, l: Double, concentration: Double, M: Double): DoubleArray {
+    private fun createSingleLine(
+        xData: DoubleArray, yData: DoubleArray, v: Double, S_Tref: Double, A: Double, yair: Double,
+        yself: Double, E2shtreha: Double, n: Double, betta: Double, p: Double,
+        T: Double, l: Double, concentration: Double, M: Double
+    ): DoubleArray {
         //1)
         //Не могу раccчитать, временно не учитываем
         val Q_Tref: Double = 1.0 //заменить на Q(Tref)
@@ -174,7 +200,13 @@ class HitranServiceImpl(
             //4)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(S_T * l * fL(x = xData[i], y_p_T = y_p_T, v_corrected = vCorrected) * concentration + yData[i])
+                newY += doubleArrayOf(
+                    S_T * l * fL(
+                        x = xData[i],
+                        y_p_T = y_p_T,
+                        v_corrected = vCorrected
+                    ) * concentration + yData[i]
+                )
             }
             return newY
         } else {
@@ -202,7 +234,9 @@ class HitranServiceImpl(
     //формула 1
     //Temperature dependence of the line intensity
     private fun S_T(S_Tref: Double, Q_Tref: Double, Q_T: Double, E2shtreha: Double, T: Double, v: Double) =
-        S_Tref * (Q_Tref / Q_T) * (exp(-C2 * E2shtreha / T) / exp(-C2 * E2shtreha / T_REF)) * ((1 - exp(-C2 * v / T)) / (1 - exp(-C2 * v / T_REF)))
+        S_Tref * (Q_Tref / Q_T) * (exp(-C2 * E2shtreha / T) / exp(-C2 * E2shtreha / T_REF)) * ((1 - exp(-C2 * v / T)) / (1 - exp(
+            -C2 * v / T_REF
+        )))
 
     //формула 2
     //Temperature and pressure dependence of the line width
@@ -210,7 +244,8 @@ class HitranServiceImpl(
 
     //формула 3
     //γ(p,T) for a gas at pressure p (atm), temperature T (K) and partial pressure pself (atm)
-    private fun y_p_T(p: Double, T: Double, pself: Double, yair: Double, yself: Double, n: Double) = ((T_REF / T).pow(n) * (yair * (p - pself) + yself * pself))
+    private fun y_p_T(p: Double, T: Double, pself: Double, yair: Double, yself: Double, n: Double) =
+        ((T_REF / T).pow(n) * (yair * (p - pself) + yself * pself))
 
     //формула 4
     //Pressure shift correction of line position
@@ -219,7 +254,8 @@ class HitranServiceImpl(
     //формула 5
     //Absorption coefficient
     //Для нижних слоев атмосферы
-    private fun fL(x: Double, y_p_T: Double, v_corrected: Double) = (1 / PI) * (y_p_T / (y_p_T.pow(2.0) + (x - v_corrected).pow(2.0)))
+    private fun fL(x: Double, y_p_T: Double, v_corrected: Double) =
+        (1 / PI) * (y_p_T / (y_p_T.pow(2.0) + (x - v_corrected).pow(2.0)))
 
     //Для верхних слоев атмосферы
     private fun fG(x: Double, aD_T: Double, v: Double) =

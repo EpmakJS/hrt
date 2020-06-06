@@ -11,7 +11,7 @@ interface N2LineRepository : JpaRepository<N2Line, N2LineId> {
 
     @Query("SELECT nl FROM N2Line nl " +
             "WHERE nl.n2LineId.vacuumWavenumber = :vacuumWavenumber")
-    fun findFirstByN2LineIdVacuumWavenumber(vacuumWavenumber: Double): N2Line?
+    fun findFirstByN2LineIdVacuumWavenumber(vacuumWavenumber: Double): N2Line
 
     @Query("SELECT nl FROM N2Line nl " +
             "WHERE nl.n2LineId.vacuumWavenumber BETWEEN :min AND :max")

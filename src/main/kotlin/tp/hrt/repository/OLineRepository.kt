@@ -8,5 +8,5 @@ import tp.hrt.model.lines.OLineId
 @Repository
 interface OLineRepository : JpaRepository<OLine, OLineId> {
 
-    fun findFirstByOLineIdVacuumWavenumber(vacuumWavenumber: Double): OLine
+    fun findFirstByOLineIdVacuumWavenumber(vacuumWavenumber: Double): OLine?
 }

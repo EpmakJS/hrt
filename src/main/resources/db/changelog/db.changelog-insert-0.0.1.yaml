@@ -13,7 +13,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 18.010565
               - column:
-                  name: desc
+                  name: type
                   value: "H2O"
         - insert:
             tableName: molecule
@@ -25,7 +25,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 43.989830
               - column:
-                  name: desc
+                  name: type
                   value: "CO2"
         - insert:
             tableName: molecule
@@ -37,7 +37,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 47.984745
               - column:
-                  name: desc
+                  name: type
                   value: "O3"
         - insert:
             tableName: molecule
@@ -49,7 +49,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 44.001062
               - column:
-                  name: desc
+                  name: type
                   value: "N2O"
         - insert:
             tableName: molecule
@@ -61,7 +61,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 27.994915
               - column:
-                  name: desc
+                  name: type
                   value: "CO"
         - insert:
             tableName: molecule
@@ -73,7 +73,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 16.031300
               - column:
-                  name: desc
+                  name: type
                   value: "CH4"
         - insert:
             tableName: molecule
@@ -85,7 +85,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 31.989830
               - column:
-                  name: desc
+                  name: type
                   value: "O2"
         - insert:
             tableName: molecule
@@ -97,7 +97,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 29.997989
               - column:
-                  name: desc
+                  name: type
                   value: "NO"
         - insert:
             tableName: molecule
@@ -109,7 +109,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 63.961901
               - column:
-                  name: desc
+                  name: type
                   value: "SO2"
         - insert:
             tableName: molecule
@@ -121,7 +121,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 45.992904
               - column:
-                  name: desc
+                  name: type
                   value: "NO2"
         - insert:
             tableName: molecule
@@ -133,7 +133,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 17.026549
               - column:
-                  name: desc
+                  name: type
                   value: "NH3"
         - insert:
             tableName: molecule
@@ -145,7 +145,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 62.995644
               - column:
-                  name: desc
+                  name: type
                   value: "HNO3"
         - insert:
             tableName: molecule
@@ -157,7 +157,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 17.002740
               - column:
-                  name: desc
+                  name: type
                   value: "OH"
         - insert:
             tableName: molecule
@@ -169,7 +169,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 20.006229
               - column:
-                  name: desc
+                  name: type
                   value: "HF"
         - insert:
             tableName: molecule
@@ -181,8 +181,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 35.976678
               - column:
-                  name: desc
-                  value: "HCl"
+                  name: type
+                  value: "HCL"
         - insert:
             tableName: molecule
             columns:
@@ -193,8 +193,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 79.926160
               - column:
-                  name: desc
-                  value: "HBr"
+                  name: type
+                  value: "HBR"
         - insert:
             tableName: molecule
             columns:
@@ -205,7 +205,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 127.912297
               - column:
-                  name: desc
+                  name: type
                   value: "HI"
         - insert:
             tableName: molecule
@@ -217,8 +217,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 50.963768
               - column:
-                  name: desc
-                  value: "ClO"
+                  name: type
+                  value: "CLO"
         - insert:
             tableName: molecule
             columns:
@@ -229,7 +229,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 59.966986
               - column:
-                  name: desc
+                  name: type
                   value: "OCS"
         - insert:
             tableName: molecule
@@ -241,7 +241,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 30.010565
               - column:
-                  name: desc
+                  name: type
                   value: "H2CO"                  
         - insert:
             tableName: molecule
@@ -253,8 +253,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 51.971593
               - column:
-                  name: desc
-                  value: "HOCl"
+                  name: type
+                  value: "HOCL"
         - insert:
             tableName: molecule
             columns:
@@ -265,7 +265,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 28.006148
               - column:
-                  name: desc
+                  name: type
                   value: "N2"                  
         - insert:
             tableName: molecule
@@ -277,7 +277,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 27.010899
               - column:
-                  name: desc
+                  name: type
                   value: "HCN"
         - insert:
             tableName: molecule
@@ -289,8 +289,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 49.992328
               - column:
-                  name: desc
-                  value: "CH3Cl"
+                  name: type
+                  value: "CH3CL"
         - insert:
             tableName: molecule
             columns:
@@ -301,7 +301,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 34.005480
               - column:
-                  name: desc
+                  name: type
                   value: "H2O2"
         - insert:
             tableName: molecule
@@ -313,7 +313,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 26.015650
               - column:
-                  name: desc
+                  name: type
                   value: "C2H2"
         - insert:
             tableName: molecule
@@ -325,7 +325,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 30.046950
               - column:
-                  name: desc
+                  name: type
                   value: "C2H6"
         - insert:
             tableName: molecule
@@ -337,7 +337,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 33.997238
               - column:
-                  name: desc
+                  name: type
                   value: "PH3"
         - insert:
             tableName: molecule
@@ -349,7 +349,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 65.991722
               - column:
-                  name: desc
+                  name: type
                   value: "COF2"
         - insert:
             tableName: molecule
@@ -361,7 +361,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 145.962492
               - column:
-                  name: desc
+                  name: type
                   value: "SF6"
         - insert:
             tableName: molecule
@@ -373,7 +373,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 33.987721
               - column:
-                  name: desc
+                  name: type
                   value: "H2S"
         - insert:
             tableName: molecule
@@ -385,7 +385,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 46.005480
               - column:
-                  name: desc
+                  name: type
                   value: "HCOOH"
         - insert:
             tableName: molecule
@@ -397,7 +397,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 32.997655
               - column:
-                  name: desc
+                  name: type
                   value: "HO2"
         - insert:
             tableName: molecule
@@ -409,7 +409,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 15.994915
               - column:
-                  name: desc
+                  name: type
                   value: "O"
         - insert:
             tableName: molecule
@@ -421,8 +421,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 96.956672
               - column:
-                  name: desc
-                  value: "ClONO2"
+                  name: type
+                  value: "CLONO2"
         - insert:
             tableName: molecule
             columns:
@@ -433,8 +433,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 29.997989
               - column:
-                  name: desc
-                  value: "NO+"
+                  name: type
+                  value: "NO_PLUS"
         - insert:
             tableName: molecule
             columns:
@@ -445,8 +445,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 95.921076
               - column:
-                  name: desc
-                  value: "HOBr"
+                  name: type
+                  value: "HOBR"
         - insert:
             tableName: molecule
             columns:
@@ -457,7 +457,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 28.031300
               - column:
-                  name: desc
+                  name: type
                   value: "C2H4"
         - insert:
             tableName: molecule
@@ -469,7 +469,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 32.026215
               - column:
-                  name: desc
+                  name: type
                   value: "CH3OH"
         - insert:
             tableName: molecule
@@ -481,8 +481,8 @@ databaseChangeLog:
                   name: molar_mass
                   value: 93.941811
               - column:
-                  name: desc
-                  value: "CH3Br"
+                  name: type
+                  value: "CH3BR"
         - insert:
             tableName: molecule
             columns:
@@ -493,7 +493,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 41.026549
               - column:
-                  name: desc
+                  name: type
                   value: "CH3CN"
         - insert:
             tableName: molecule
@@ -505,7 +505,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 87.993616
               - column:
-                  name: desc
+                  name: type
                   value: "CF4"
         - insert:
             tableName: molecule
@@ -517,7 +517,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 50.015650
               - column:
-                  name: desc
+                  name: type
                   value: "C4H2"
         - insert:
             tableName: molecule
@@ -529,7 +529,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 51.010899
               - column:
-                  name: desc
+                  name: type
                   value: "HC3N"
         - insert:
             tableName: molecule
@@ -541,7 +541,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 2.015650
               - column:
-                  name: desc
+                  name: type
                   value: "H2"
         - insert:
             tableName: molecule
@@ -553,7 +553,7 @@ databaseChangeLog:
                   name: molar_mass
                   value: 43.971036
               - column:
-                  name: desc
+                  name: type
                   value: "CS"
         - insert:
             tableName: molecule
@@ -565,5 +565,5 @@ databaseChangeLog:
                   name: molar_mass
                   value: 79.956820
               - column:
-                  name: desc
+                  name: type
                   value: "SO3"            

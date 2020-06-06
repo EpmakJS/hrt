@@ -8,5 +8,5 @@ import tp.hrt.model.lines.NOPlusLineId
 @Repository
 interface NOPlusLineRepository : JpaRepository<NOPlusLine, NOPlusLineId> {
 
-    fun findFirstByNoPlusLineIdVacuumWavenumber(vacuumWavenumber: Double): NOPlusLine
+    fun findFirstByNoPlusLineIdVacuumWavenumber(vacuumWavenumber: Double): NOPlusLine?
 }
