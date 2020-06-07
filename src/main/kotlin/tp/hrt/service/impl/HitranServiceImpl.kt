@@ -8,7 +8,6 @@ import tp.hrt.dto.DirectTaskDto
 import tp.hrt.dto.H2O
 import tp.hrt.dto.Line
 import tp.hrt.dto.O2
-import tp.hrt.dto.dataBaseMock
 import tp.hrt.model.lines.LineType
 import tp.hrt.model.lines.LineType.CH3CN
 import tp.hrt.model.lines.LineType.CS
@@ -24,9 +23,7 @@ import tp.hrt.service.HitranService
 import tp.hrt.service.MoleculeService
 import javax.validation.UnexpectedTypeException
 import kotlin.math.PI
-import kotlin.math.abs
 import kotlin.math.exp
-import kotlin.math.floor
 import kotlin.math.ln
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -42,9 +39,9 @@ class HitranServiceImpl(
 ) : HitranService {
 
     override fun getAbsorptionSpectrumOfGasMixture(directTaskDto: DirectTaskDto) {
-        val xy = createXY(directTaskDto.vmin, directTaskDto.vmax)
-        val xData: DoubleArray = xy[0]
-        var yData: DoubleArray = xy[1]
+        val emptyAbsorptionSpectrum = createEmptyAbsorptionSpectrum(directTaskDto.vmin, directTaskDto.vmax)
+        val vacuumWavenumberData: DoubleArray = emptyAbsorptionSpectrum[0]
+        var intensityData: DoubleArray = emptyAbsorptionSpectrum[1]
 
         directTaskDto.concentration.map { concentration ->
             val molecule = moleculeService.findMoleculeById(concentration.key)
@@ -52,10 +49,10 @@ class HitranServiceImpl(
             val lines = repository.findInRangeByVacuumWavenumber(directTaskDto.vmin, directTaskDto.vmax)
 
             lines?.forEach { line ->
-                yData = createSingleLine(
-                    xData = xData,
-                    yData = yData,
-                    v = line.lineId.vacuumWavenumber,
+                getAbsorptionSpectrumOfSingleLine(
+                    xData = vacuumWavenumberData,
+                    yData = intensityData,
+                    vacuumWavenumber = line.lineId.vacuumWavenumber,
                     S_Tref = line.lineId.intensity,
                     A = line.lineId.einsteinA,
                     yair = line.lineId.gammaAir,
@@ -63,16 +60,16 @@ class HitranServiceImpl(
                     E2shtreha = line.lowerStateEnergy,
                     n = line.temperatureDependence,
                     betta = line.airPressure,
-                    p = directTaskDto.p,
-                    T = directTaskDto.T,
-                    l = directTaskDto.l,
+                    gasPressure = directTaskDto.p,
+                    gasTemperature = directTaskDto.T,
+                    gasColumnThickness = directTaskDto.l,
                     concentration = concentration.value,
-                    M = molecule.molarMass
+                    molarMass = molecule.molarMass
                 )
             }
         }
 
-        plot(xData = xData, yData = yData)
+        plotAbsorptionSpectrum(vacuumWavenumberData = vacuumWavenumberData, intensityData = intensityData)
     }
 
 //    override fun findConcentration(
@@ -123,108 +120,120 @@ class HitranServiceImpl(
 //        return 0
 //    }
 
-    private fun createXY(xMin: Double, xMax: Double): Array<DoubleArray> {
-        val xStep = 0.01
-        var xNext = xMin
-        var plotX: DoubleArray = doubleArrayOf()
-        var plotY: DoubleArray = doubleArrayOf()
-        while (xNext < xMax) {
-            plotX += doubleArrayOf(xNext)
-            xNext += xStep
-            plotY += doubleArrayOf(0.0)
+    private fun createEmptyAbsorptionSpectrum(minVacuumWavenumber: Double, maxVacuumWavenumber: Double): Array<DoubleArray> {
+        var plotVacuumWavenumber: DoubleArray = doubleArrayOf()
+        var plotIntensity: DoubleArray = doubleArrayOf()
+
+        val step = 0.1
+
+        var vacuumWavenumber = minVacuumWavenumber
+
+        while (vacuumWavenumber < maxVacuumWavenumber) {
+            plotVacuumWavenumber += doubleArrayOf(vacuumWavenumber)
+            vacuumWavenumber += step
+            plotIntensity += doubleArrayOf(0.0)
         }
-        return arrayOf(plotX, plotY)
+
+        return arrayOf(plotVacuumWavenumber, plotIntensity)
     }
 
-    private fun createSingleLine(
-        xData: DoubleArray, yData: DoubleArray, v: Double, S_Tref: Double, A: Double, yair: Double,
-        yself: Double, E2shtreha: Double, n: Double, betta: Double, p: Double,
-        T: Double, l: Double, concentration: Double, M: Double
-    ): DoubleArray {
+    private fun getAbsorptionSpectrumOfSingleLine(
+        xData: DoubleArray,
+        yData: DoubleArray,
+        vacuumWavenumber: Double,
+        S_Tref: Double,
+        A: Double,
+        yair: Double,
+        yself: Double,
+        E2shtreha: Double,
+        n: Double,
+        betta: Double,
+        gasPressure: Double,
+        gasTemperature: Double,
+        gasColumnThickness: Double,
+        concentration: Double,
+        molarMass: Double
+    ) {
         //1)
         //Не могу раccчитать, временно не учитываем
         val Q_Tref: Double = 1.0 //заменить на Q(Tref)
         val Q_T: Double = 1.0 //заменить на Q(T)
-        val S_T: Double = S_T(S_Tref = S_Tref, Q_Tref = Q_Tref, Q_T = Q_T, E2shtreha = E2shtreha, T = T, v = v)
-        if (p > 0.15) {
+        val S_T: Double = S_T(S_Tref = S_Tref, Q_Tref = Q_Tref, Q_T = Q_T, E2shtreha = E2shtreha, gasTemperature = gasTemperature, vacuumWavenumber = vacuumWavenumber)
+        // p для верхних слоев атмосферы
+        if (gasPressure > 0.15) {
             //2)
-            val pself: Double = concentration * p
-            val y_p_T: Double = y_p_T(p = p, T = T, pself = pself, yair = yair, yself = yself, n = n)
+            val pself: Double = concentration * gasPressure
+            val y_p_T: Double = y_p_T(gasPressure = gasPressure, T = gasTemperature, pself = pself, yair = yair, yself = yself, n = n)
             //3)
-            val vCorrected = vCorrected(v = v, betta = betta, p = p)
+            val vacuumWavenumberCorrected = vacuumWavenumberCorrected(vacuumWavenumber = vacuumWavenumber, betta = betta, gasPressure = gasPressure)
             //4)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(
-                    S_T * l * fL(
-                        x = xData[i],
-                        y_p_T = y_p_T,
-                        v_corrected = vCorrected
-                    ) * concentration + yData[i]
-                )
+                newY += doubleArrayOf(S_T * gasColumnThickness * fL(x = xData[i], y_p_T = y_p_T, vacuumWavenumberCorrected = vacuumWavenumberCorrected) * concentration + yData[i])
             }
-            return newY
-        } else {
+        }
+        // p для верхних слоев атмосферы
+        else {
             //2)
-            //M - molar mass (еще нет таблицы)
-            val aD_T: Double = aD_T(T = T, v = v, M = M)
+            val aD_T: Double = aD_T(gasTemperature = gasTemperature, vacuumWavenumber = vacuumWavenumber, molarMass = molarMass)
             //3)
             var newY: DoubleArray = doubleArrayOf()
             for (i in 0..(xData.size - 1)) {
-                newY += doubleArrayOf(S_T * l * fG(x = xData[i], aD_T = aD_T, v = v) * concentration + yData[i])
+                newY += doubleArrayOf(S_T * gasColumnThickness * fG(x = xData[i], aD_T = aD_T, v = vacuumWavenumber) * concentration + yData[i])
             }
-            return newY
         }
     }
 
-    private fun getAppropriateRepository(moleculeType: LineType) =
-        when (moleculeType) {
-            N2 -> n2LineRepository
-            CH3CN -> cH3CNLineRepository
-            CS -> cSLineRepository
-            NO_PLUS -> nOPlusLineRepository
-            O -> oLineRepository
-            else -> throw UnexpectedTypeException()
-        }
+    //формула 1
+    //Temperature dependence of the line intensity
+    private fun S_T(S_Tref: Double, Q_Tref: Double, Q_T: Double, E2shtreha: Double, gasTemperature: Double, vacuumWavenumber: Double) =
+        S_Tref * (Q_Tref / Q_T) * (exp(-C2 * E2shtreha / gasTemperature) / exp(-C2 * E2shtreha / T_REF)) * ((1 - exp(-C2 * vacuumWavenumber / gasTemperature)) / (1 - exp(
+            -C2 * vacuumWavenumber / T_REF
+        )))
 
-    private fun plot(xData: DoubleArray, yData: DoubleArray) {
-        val chart = QuickChart.getChart("H2O", "Wave Number", "Intensity", "S(V)", xData, yData)
+    //формула 2
+    //Temperature and pressure dependence of the line width
+    private fun aD_T(gasTemperature: Double, vacuumWavenumber: Double, molarMass: Double) =
+            (vacuumWavenumber / C) * sqrt(2.0 * NA * K * gasTemperature * ln(2.0) / molarMass)
+
+    //формула 3
+    //γ(p,T) for a gas at pressure p (atm), temperature T (K) and partial pressure pself (atm)
+    private fun y_p_T(gasPressure: Double, T: Double, pself: Double, yair: Double, yself: Double, n: Double) =
+            ((T_REF / T).pow(n) * (yair * (gasPressure - pself) + yself * pself))
+
+    //формула 4
+    //Pressure shift correction of line position
+    private fun vacuumWavenumberCorrected(vacuumWavenumber: Double, betta: Double, gasPressure: Double) =
+            vacuumWavenumber + betta * gasPressure
+
+    //формула 5
+    //Absorption coefficient
+    //Для нижних слоев атмосферы
+    private fun fL(x: Double, y_p_T: Double, vacuumWavenumberCorrected: Double) =
+            (1 / PI) * (y_p_T / (y_p_T.pow(2.0) + (x - vacuumWavenumberCorrected).pow(2.0)))
+
+    //Для верхних слоев атмосферы
+    private fun fG(x: Double, aD_T: Double, v: Double) =
+            sqrt(ln(2.0) / (PI * (aD_T.pow(2.0)))) * exp(-((x - v).pow(2.0)) * ln(2.0) / aD_T.pow(2.0))
+
+    private fun getAppropriateRepository(moleculeType: LineType) =
+            when (moleculeType) {
+                N2 -> n2LineRepository
+                CH3CN -> cH3CNLineRepository
+                CS -> cSLineRepository
+                NO_PLUS -> nOPlusLineRepository
+                O -> oLineRepository
+                else -> throw UnexpectedTypeException()
+            }
+
+    private fun plotAbsorptionSpectrum(vacuumWavenumberData: DoubleArray, intensityData: DoubleArray) {
+        val chart = QuickChart.getChart("Absorption Spectrum", "Wave Number", "Intensity", "S(v)", vacuumWavenumberData, intensityData)
         SwingWrapper(chart).displayChart()
         // Save it
         //BitmapEncoder.saveBitmap(chart, "./Sample_Chart", BitmapFormat.PNG)
         // or save it in high-res
         //BitmapEncoder.saveBitmapWithDPI(chart, "./Sample_Chart_300_DPI", BitmapFormat.PNG, 300)
     }
-
-    //формула 1
-    //Temperature dependence of the line intensity
-    private fun S_T(S_Tref: Double, Q_Tref: Double, Q_T: Double, E2shtreha: Double, T: Double, v: Double) =
-        S_Tref * (Q_Tref / Q_T) * (exp(-C2 * E2shtreha / T) / exp(-C2 * E2shtreha / T_REF)) * ((1 - exp(-C2 * v / T)) / (1 - exp(
-            -C2 * v / T_REF
-        )))
-
-    //формула 2
-    //Temperature and pressure dependence of the line width
-    private fun aD_T(T: Double, v: Double, M: Double) = (v / C) * sqrt(2.0 * NA * K * T * ln(2.0) / M)
-
-    //формула 3
-    //γ(p,T) for a gas at pressure p (atm), temperature T (K) and partial pressure pself (atm)
-    private fun y_p_T(p: Double, T: Double, pself: Double, yair: Double, yself: Double, n: Double) =
-        ((T_REF / T).pow(n) * (yair * (p - pself) + yself * pself))
-
-    //формула 4
-    //Pressure shift correction of line position
-    private fun vCorrected(v: Double, betta: Double, p: Double) = v + betta * p
-
-    //формула 5
-    //Absorption coefficient
-    //Для нижних слоев атмосферы
-    private fun fL(x: Double, y_p_T: Double, v_corrected: Double) =
-        (1 / PI) * (y_p_T / (y_p_T.pow(2.0) + (x - v_corrected).pow(2.0)))
-
-    //Для верхних слоев атмосферы
-    private fun fG(x: Double, aD_T: Double, v: Double) =
-        sqrt(ln(2.0) / (PI * (aD_T.pow(2.0)))) * exp(-((x - v).pow(2.0)) * ln(2.0) / aD_T.pow(2.0))
 
     companion object {
         const val NA: Double = 6.02214129e23
