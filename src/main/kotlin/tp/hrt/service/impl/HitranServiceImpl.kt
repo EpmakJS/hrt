@@ -4,11 +4,9 @@ import org.knowm.xchart.QuickChart
 import org.knowm.xchart.SwingWrapper
 import org.springframework.stereotype.Service
 import tp.hrt.dto.CO2
-import tp.hrt.dto.ConcentrationMock
 import tp.hrt.dto.DirectTaskDto
 import tp.hrt.dto.H2O
 import tp.hrt.dto.Line
-import tp.hrt.dto.MolarMassMock
 import tp.hrt.dto.O2
 import tp.hrt.model.lines.LineType
 import tp.hrt.model.lines.LineType.CH3CN
@@ -121,24 +119,6 @@ class HitranServiceImpl(
 //
 //        return 0
 //    }
-
-    private fun getMolarMass(dataBaseMock: Line): Double {
-        return when (dataBaseMock) {
-            is H2O -> molarMass.H2O
-            is CO2 -> molarMass.CO2
-            is O2 -> molarMass.O2
-            else -> throw UnexpectedTypeException()
-        }
-    }
-
-    private fun getConcentration(dataBaseMock: Line, concentration: ConcentrationMock): Double {
-        return when (dataBaseMock) {
-            is H2O -> concentration.H2O
-            is CO2 -> concentration.CO2
-            is O2 -> concentration.O2
-            else -> throw UnexpectedTypeException()
-        }
-    }
 
     private fun createEmptyAbsorptionSpectrum(minVacuumWavenumber: Double, maxVacuumWavenumber: Double): Array<DoubleArray> {
         var plotVacuumWavenumber: DoubleArray = doubleArrayOf()
@@ -265,7 +245,5 @@ class HitranServiceImpl(
         const val C2: Double = 1.4387770 // (cm*K)
         const val T_REF: Double = 296.0 // default
         const val P_REF: Double = 1.0 // default
-
-        val molarMass = MolarMassMock()
     }
 }

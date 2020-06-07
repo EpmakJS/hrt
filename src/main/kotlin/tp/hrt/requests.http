@@ -23,15 +23,12 @@ Content-Type: application/json
 
 {
   "vmin": 0.0,
-  "vmax": 2.0,
+  "vmax": 200.0,
   "p": 1.0,
   "T": 296.0,
   "l": 1.0,
   "concentration": {
-    "H2O": 0.1,
-    "CO2": 0,
-    "O2": 0,
-    "N2": 0
+    "46": 1.00
   }
 }
 
