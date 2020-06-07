@@ -49,7 +49,7 @@ class HitranServiceImpl(
             val lines = repository.findInRangeByVacuumWavenumber(directTaskDto.vmin, directTaskDto.vmax)
 
             lines?.forEach { line ->
-                intensityData = getAbsorptionSpectrumOfSingleLine(
+                getAbsorptionSpectrumOfSingleLine(
                     xData = vacuumWavenumberData,
                     yData = intensityData,
                     vacuumWavenumber = line.lineId.vacuumWavenumber,
@@ -153,7 +153,7 @@ class HitranServiceImpl(
         gasColumnThickness: Double,
         concentration: Double,
         molarMass: Double
-    ): DoubleArray {
+    ) {
         //1)
         //Не могу раccчитать, временно не учитываем
         val Q_Tref: Double = 1.0 //заменить на Q(Tref)
@@ -171,7 +171,6 @@ class HitranServiceImpl(
             for (i in 0..(xData.size - 1)) {
                 newY += doubleArrayOf(S_T * gasColumnThickness * fL(x = xData[i], y_p_T = y_p_T, vacuumWavenumberCorrected = vacuumWavenumberCorrected) * concentration + yData[i])
             }
-            return newY
         }
         // p для верхних слоев атмосферы
         else {
@@ -182,7 +181,6 @@ class HitranServiceImpl(
             for (i in 0..(xData.size - 1)) {
                 newY += doubleArrayOf(S_T * gasColumnThickness * fG(x = xData[i], aD_T = aD_T, v = vacuumWavenumber) * concentration + yData[i])
             }
-            return newY
         }
     }
 
