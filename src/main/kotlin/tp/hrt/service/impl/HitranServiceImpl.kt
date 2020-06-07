@@ -48,107 +48,82 @@ class HitranServiceImpl(
         val xData: DoubleArray = xy[0]
         var yData: DoubleArray = xy[1]
 
-//        directTaskDto.concentration.map {
-//            val molecule = moleculeService.findMoleculeById(it.key)
-//            val repository = when (molecule.type) {
-//                N2 -> n2LineRepository
-//                CH3CN -> cH3CNLineRepository
-//                CS -> cSLineRepository
-//                NO_PLUS -> nOPlusLineRepository
-//                O -> oLineRepository
-//                else -> throw UnexpectedTypeException()
-//            }
-//
-//            yData = createSingleLine(
-//                xData = xData,
-//                yData = yData,
-//                // Return from repo
-//                v = dataBaseMock[i].v,
-//                S_Tref = dataBaseMock[i].S_Tref,
-//                A = dataBaseMock[i].A,
-//                yair = dataBaseMock[i].yair,
-//                yself = dataBaseMock[i].yself,
-//                E2shtreha = dataBaseMock[i].E2shtreha,
-//                n = dataBaseMock[i].n,
-//                betta = dataBaseMock[i].betta,
-//                p = directTaskDto.p,
-//                T = directTaskDto.T,
-//                l = directTaskDto.l,
-//                concentration = it.value,
-//                M = molecule.molarMass
-//            )
-//        }
+        directTaskDto.concentration.map { concentration ->
+            val molecule = moleculeService.findMoleculeById(concentration.key)
+            val repository = getAppropriateRepository(molecule.type)
+            val lines = repository.findInRangeByVacuumWavenumber(directTaskDto.vmin, directTaskDto.vmax)
 
-        for (i in 0..(dataBaseMock.size - 1)) {
-            yData = createSingleLine(
-                xData = xData,
-                yData = yData,
-                // Return from repo
-                v = dataBaseMock[i].v,
-                S_Tref = dataBaseMock[i].S_Tref,
-                A = dataBaseMock[i].A,
-                yair = dataBaseMock[i].yair,
-                yself = dataBaseMock[i].yself,
-                E2shtreha = dataBaseMock[i].E2shtreha,
-                n = dataBaseMock[i].n,
-                betta = dataBaseMock[i].betta,
-                p = directTaskDto.p,
-                T = directTaskDto.T,
-                l = directTaskDto.l,
-                concentration = getConcentration(dataBaseMock[i], directTaskDto.concentration),
-                M = getMolarMass(dataBaseMock[i])
-            )
-        }
-        plot(xData = xData, yData = yData)
-    }
-
-    override fun findConcentration(
-        x: DoubleArray,
-        y: DoubleArray,
-        emptyY: DoubleArray,
-        directTaskDto: DirectTaskDto
-    ): Int {
-        //обратная задача
-        var yDataPercent: DoubleArray
-        val percentStep = 0.001
-        var percent = 0.0
-        var sum: Double
-        var sumPrev = 0.0
-        while (percent < 1.0) {
-            sum = 0.0
-            yDataPercent = emptyY
-            for (i in 0..9) {
-                yDataPercent = createSingleLine(
-                    xData = x,
-                    yData = yDataPercent,
-                    // Return from repo
-                    v = dataBaseMock[i].v,
-                    S_Tref = dataBaseMock[i].S_Tref,
-                    A = dataBaseMock[i].A,
-                    yair = dataBaseMock[i].yair,
-                    yself = dataBaseMock[i].yself,
-                    E2shtreha = dataBaseMock[i].E2shtreha,
-                    n = dataBaseMock[i].n,
-                    betta = dataBaseMock[i].betta,
+            lines?.forEach { line ->
+                yData = createSingleLine(
+                    xData = xData,
+                    yData = yData,
+                    v = line.lineId.vacuumWavenumber,
+                    S_Tref = line.lineId.intensity,
+                    A = line.lineId.einsteinA,
+                    yair = line.lineId.gammaAir,
+                    yself = line.lineId.gammaSelf,
+                    E2shtreha = line.lowerStateEnergy,
+                    n = line.temperatureDependence,
+                    betta = line.airPressure,
                     p = directTaskDto.p,
                     T = directTaskDto.T,
                     l = directTaskDto.l,
-                    concentration = getConcentration(dataBaseMock[i], directTaskDto.concentration),
-                    M = getMolarMass(dataBaseMock[i])
+                    concentration = concentration.value,
+                    M = molecule.molarMass
                 )
             }
-            for (i in 1..(y.size - 1)) {
-                sum += abs(y[i] - yDataPercent[i])
-            }
-            if (!percent.equals(0.0) && sum - sumPrev > 0) {
-                return floor((percent - percentStep) * 100.0).toInt()
-            }
-            sumPrev = sum
-            percent += percentStep
         }
 
-        return 0
+        plot(xData = xData, yData = yData)
     }
+
+//    override fun findConcentration(
+//        x: DoubleArray,
+//        y: DoubleArray,
+//        emptyY: DoubleArray,
+//        directTaskDto: DirectTaskDto
+//    ): Int {
+//        //обратная задача
+//        var yDataPercent: DoubleArray
+//        val percentStep = 0.001
+//        var percent = 0.0
+//        var sum: Double
+//        var sumPrev = 0.0
+//        while (percent < 1.0) {
+//            sum = 0.0
+//            yDataPercent = emptyY
+//            for (i in 0..9) {
+//                yDataPercent = createSingleLine(
+//                    xData = x,
+//                    yData = yDataPercent,
+//                    // Return from repo
+//                    v = dataBaseMock[i].v,
+//                    S_Tref = dataBaseMock[i].S_Tref,
+//                    A = dataBaseMock[i].A,
+//                    yair = dataBaseMock[i].yair,
+//                    yself = dataBaseMock[i].yself,
+//                    E2shtreha = dataBaseMock[i].E2shtreha,
+//                    n = dataBaseMock[i].n,
+//                    betta = dataBaseMock[i].betta,
+//                    p = directTaskDto.p,
+//                    T = directTaskDto.T,
+//                    l = directTaskDto.l,
+//                    concentration = getConcentration(dataBaseMock[i], directTaskDto.concentration),
+//                    M = getMolarMass(dataBaseMock[i])
+//                )
+//            }
+//            for (i in 1..(y.size - 1)) {
+//                sum += abs(y[i] - yDataPercent[i])
+//            }
+//            if (!percent.equals(0.0) && sum - sumPrev > 0) {
+//                return floor((percent - percentStep) * 100.0).toInt()
+//            }
+//            sumPrev = sum
+//            percent += percentStep
+//        }
+//
+//        return 0
+//    }
 
     private fun getMolarMass(dataBaseMock: Line): Double {
         return when (dataBaseMock) {
@@ -169,7 +144,7 @@ class HitranServiceImpl(
     }
 
     private fun createXY(xMin: Double, xMax: Double): Array<DoubleArray> {
-        val xStep = 0.01
+        val xStep = 0.1
         var xNext = xMin
         var plotX: DoubleArray = doubleArrayOf()
         var plotY: DoubleArray = doubleArrayOf()
@@ -221,6 +196,16 @@ class HitranServiceImpl(
             return newY
         }
     }
+
+    private fun getAppropriateRepository(moleculeType: LineType) =
+        when (moleculeType) {
+            N2 -> n2LineRepository
+            CH3CN -> cH3CNLineRepository
+            CS -> cSLineRepository
+            NO_PLUS -> nOPlusLineRepository
+            O -> oLineRepository
+            else -> throw UnexpectedTypeException()
+        }
 
     private fun plot(xData: DoubleArray, yData: DoubleArray) {
         val chart = QuickChart.getChart("H2O", "Wave Number", "Intensity", "S(V)", xData, yData)

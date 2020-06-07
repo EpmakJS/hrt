@@ -6,5 +6,5 @@ interface HitranService {
 
     fun getAbsorptionSpectrumOfGasMixture(directTaskDto: DirectTaskDto)
 
-    fun findConcentration(x: DoubleArray, y: DoubleArray, emptyY: DoubleArray, directTaskDto: DirectTaskDto): Int
+//    fun findConcentration(x: DoubleArray, y: DoubleArray, emptyY: DoubleArray, directTaskDto: DirectTaskDto): Int
 }

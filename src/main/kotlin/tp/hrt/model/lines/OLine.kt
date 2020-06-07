@@ -17,37 +17,37 @@ import javax.persistence.Table
 class OLine : BaseLine() {
 
     @EmbeddedId
-    lateinit var oLineId: OLineId
+    override lateinit var lineId: OLineId
 
     @Column(name = "lower_state_energy", nullable = false)
-    val lowerStateEnergy: Double = 0.0
+    override val lowerStateEnergy: Double = 0.0
 
     @Column(name = "temperature_dependence", nullable = false)
-    val temperatureDependence: Double = 0.0
+    override val temperatureDependence: Double = 0.0
 
     @Column(name = "air_pressure", nullable = false)
-    val airPressure: Double = 0.0
+    override val airPressure: Double = 0.0
 
     @Column(name = "upper_state_global_quanta", nullable = false)
-    val upperStateGlobalQuanta: String = ""
+    override val upperStateGlobalQuanta: String = ""
 
     @Column(name = "lower_state_global_quanta", nullable = false)
-    val lowerStateGlobalQuanta: String = ""
+    override val lowerStateGlobalQuanta: String = ""
 
     @Column(name = "i_err", nullable = false)
-    val uncertaintyIndices: Long = 0L
+    override val uncertaintyIndices: Long = 0L
 
     @Column(name = "i_ref", nullable = false)
-    val referenceIndices: Long = 0L
+    override val referenceIndices: Long = 0L
 
     @Column(name = "flag", nullable = false)
-    val flag: String = ""
+    override val flag: String = ""
 
     @Column(name = "g_upper", nullable = false)
-    val upperStateStatisticalWeight: Double = 0.0
+    override val upperStateStatisticalWeight: Double = 0.0
 
     @Column(name = "g_lower", nullable = false)
-    val lowerStateStatisticalWeight: Double = 0.0
+    override val lowerStateStatisticalWeight: Double = 0.0
 
     @ManyToOne
     @JoinColumn(name = "mol_id")
@@ -60,15 +60,15 @@ class OLine : BaseLine() {
 
 @Embeddable
 class OLineId(
-    @Column(name = "iso_number", nullable = false) val isoNumber: Long,
-    @Column(name = "vacuum_wavenumber", nullable = false) val vacuumWavenumber: Double,
-    @Column(name = "intensity", nullable = false) val intensity: Double,
-    @Column(name = "einstein_a", nullable = false) val einsteinA: Double,
-    @Column(name = "gamma_air", nullable = false) val gammaAir: Double,
-    @Column(name = "gamma_self", nullable = false) val gammaSelf: Double,
-    @Column(name = "upper_state_local_quanta", nullable = false) val upperStateLocalQuanta: String,
-    @Column(name = "lower_state_local_quanta", nullable = false) val lowerStateLocalQuanta: String
-) : Serializable {
+    @Column(name = "iso_number", nullable = false) override val isoNumber: Long,
+    @Column(name = "vacuum_wavenumber", nullable = false) override val vacuumWavenumber: Double,
+    @Column(name = "intensity", nullable = false) override val intensity: Double,
+    @Column(name = "einstein_a", nullable = false) override val einsteinA: Double,
+    @Column(name = "gamma_air", nullable = false) override val gammaAir: Double,
+    @Column(name = "gamma_self", nullable = false) override val gammaSelf: Double,
+    @Column(name = "upper_state_local_quanta", nullable = false) override val upperStateLocalQuanta: String,
+    @Column(name = "lower_state_local_quanta", nullable = false) override val lowerStateLocalQuanta: String
+) : BaseLineId() {
 
     companion object {
         private const val serialVersionUID = -19692L

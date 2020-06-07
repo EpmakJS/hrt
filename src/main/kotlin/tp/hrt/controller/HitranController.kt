@@ -37,7 +37,7 @@ class HitranController(
     fun getN2LinesInRangeByVacuumWavenumber(
         @RequestParam minVacuumWavenumber: Double,
         @RequestParam maxVacuumWavenumber: Double
-    ) = n2LineRepository.findN2LinesByN2LineIdVacuumWavenumberBetween(minVacuumWavenumber, maxVacuumWavenumber)
+    ) = n2LineRepository.findInRangeByVacuumWavenumber(minVacuumWavenumber, maxVacuumWavenumber)
 
 //    @PostMapping("/inverse-task")
 //    fun createClient(@RequestBody inverseTaskDto: InverseTaskDto) = hitranService.findConcentration(inverseTaskDto)

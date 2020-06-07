@@ -19,5 +19,29 @@ import javax.persistence.MappedSuperclass
 )
 abstract class BaseLine : Serializable {
 
+    abstract val lineId: BaseLineId
+    abstract val lowerStateEnergy: Double
+    abstract val temperatureDependence: Double
+    abstract val airPressure: Double
+    abstract val upperStateGlobalQuanta: String
+    abstract val lowerStateGlobalQuanta: String
+    abstract val uncertaintyIndices: Long
+    abstract val referenceIndices: Long
+    abstract val flag: String
+    abstract val upperStateStatisticalWeight: Double
+    abstract val lowerStateStatisticalWeight: Double
+
     abstract val lineType: LineType
+}
+
+abstract class BaseLineId : Serializable {
+
+    abstract val isoNumber: Long
+    abstract val vacuumWavenumber: Double
+    abstract val intensity: Double
+    abstract val einsteinA: Double
+    abstract val gammaAir: Double
+    abstract val gammaSelf: Double
+    abstract val upperStateLocalQuanta: String
+    abstract val lowerStateLocalQuanta: String
 }

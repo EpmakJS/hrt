@@ -6,7 +6,7 @@ data class DirectTaskDto(
     val p: Double,
     val T: Double,
     val l: Double,
-    val concentration: ConcentrationMock
+    val concentration: Map<Int, Double>
 )
 
 data class ConcentrationMock(
