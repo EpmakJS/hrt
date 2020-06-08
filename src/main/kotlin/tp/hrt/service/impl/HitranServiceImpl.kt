@@ -46,16 +46,16 @@ class HitranServiceImpl(
 
             lines?.forEach { line ->
                 intensityData = getAbsorptionSpectrumOfSingleLine(
-                    xData = vacuumWavenumberData,
-                    yData = intensityData,
+                    vacuumWavenumberData = vacuumWavenumberData,
+                    intensityData = intensityData,
                     vacuumWavenumber = line.lineId.vacuumWavenumber,
-                    S_Tref = line.lineId.intensity,
-                    A = line.lineId.einsteinA,
-                    yair = line.lineId.gammaAir,
-                    yself = line.lineId.gammaSelf,
-                    E2shtreha = line.lowerStateEnergy,
-                    n = line.temperatureDependence,
-                    betta = line.airPressure,
+                    intensityForTemperatureRef = line.lineId.intensity,
+                    einsteinA = line.lineId.einsteinA,
+                    gammaAir = line.lineId.gammaAir,
+                    gammaSelf = line.lineId.gammaSelf,
+                    lowerStateEnergy = line.lowerStateEnergy,
+                    temperatureDependence = line.temperatureDependence,
+                    airPressure = line.airPressure,
                     gasPressure = directTaskDto.p,
                     gasTemperature = directTaskDto.T,
                     gasColumnThickness = directTaskDto.l,
@@ -120,118 +120,154 @@ class HitranServiceImpl(
         minVacuumWavenumber: Double,
         maxVacuumWavenumber: Double
     ): Array<ArrayList<Double>> {
-        var plotVacuumWavenumber = arrayListOf<Double>()
-        var plotIntensity = arrayListOf<Double>()
+        var vacuumWavenumberData = arrayListOf<Double>()
+        var intensityData = arrayListOf<Double>()
 
         val step = 0.1
 
         var vacuumWavenumber = if (minVacuumWavenumber == 0.0) step else minVacuumWavenumber
 
         while (vacuumWavenumber < maxVacuumWavenumber) {
-            plotVacuumWavenumber.add(vacuumWavenumber)
+            vacuumWavenumberData.add(vacuumWavenumber)
             vacuumWavenumber += step
-            plotIntensity.add(0.0)
+            intensityData.add(0.0)
         }
 
-        return arrayOf(plotVacuumWavenumber, plotIntensity)
+        return arrayOf(vacuumWavenumberData, intensityData)
     }
 
     private fun getAbsorptionSpectrumOfSingleLine(
-        xData: ArrayList<Double>,
-        yData: ArrayList<Double>,
+        vacuumWavenumberData: ArrayList<Double>,
+        intensityData: ArrayList<Double>,
         vacuumWavenumber: Double,
-        S_Tref: Double,
-        A: Double,
-        yair: Double,
-        yself: Double,
-        E2shtreha: Double,
-        n: Double,
-        betta: Double,
+        intensityForTemperatureRef: Double,
+        einsteinA: Double,
+        gammaAir: Double,
+        gammaSelf: Double,
+        lowerStateEnergy: Double,
+        temperatureDependence: Double,
+        airPressure: Double,
         gasPressure: Double,
         gasTemperature: Double,
         gasColumnThickness: Double,
         concentration: Double,
         molarMass: Double
     ): ArrayList<Double> {
-        //1)
         //Не могу раccчитать, временно не учитываем
-        val Q_Tref: Double = 1.0 //заменить на Q(Tref)
-        val Q_T: Double = 1.0 //заменить на Q(T)
-        val S_T: Double = S_T(
-            S_Tref = S_Tref,
-            Q_Tref = Q_Tref,
-            Q_T = Q_T,
-            E2shtreha = E2shtreha,
-            gasTemperature = gasTemperature,
-            vacuumWavenumber = vacuumWavenumber
-        )
+        val partitionSumForTemperatureRef: Double = 1.0 //заменить на Q(Tref)
+        val partitionSumForTemperature: Double = 1.0 //заменить на Q(T)
+
+        val intensityForTemperature: Double = getIntensityForTemperature(
+                intensityForTemperatureRef,
+                partitionSumForTemperatureRef,
+                partitionSumForTemperature,
+                lowerStateEnergy,
+                gasTemperature,
+                vacuumWavenumber)
+
         // p для верхних слоев атмосферы
-        if (gasPressure > 0.15) {
-            //2)
-            val pself: Double = concentration * gasPressure
-            val y_p_T: Double = y_p_T(gasPressure, gasTemperature, pself, yair, yself, n)
-            //3)
-            val vacuumWavenumberCorrected = correctVacuumWavenumber(vacuumWavenumber, betta, gasPressure)
-            //4)
-            for (i in 0..(xData.size - 1)) {
-                yData[i] += S_T * gasColumnThickness * findIntensityByLorentzProfile(
-                    xData[i],
-                    y_p_T,
-                    vacuumWavenumberCorrected
-                ) * concentration
+        if (gasPressure > 0.1) {
+            val componentsPressure: Double = getComponentsPressure(concentration, gasPressure)
+
+            val lorentzianBroadeningCoefficient : Double = getLorentzianBroadeningCoefficient(
+                    gasPressure,
+                    gasTemperature,
+                    componentsPressure,
+                    gammaAir,
+                    gammaSelf,
+                    temperatureDependence)
+
+            val vacuumWavenumberCorrected = correctVacuumWavenumber(
+                    vacuumWavenumber,
+                    airPressure,
+                    gasPressure)
+
+            for (i in 0..(vacuumWavenumberData.size - 1)) {
+                intensityData[i] +=
+                    getLineIntensity(intensityForTemperature, gasColumnThickness, concentration)*
+                    findIntensityByLorentzProfile(vacuumWavenumberData[i], lorentzianBroadeningCoefficient, vacuumWavenumberCorrected)
+
             }
-            return yData
         }
         // p для верхних слоев атмосферы
         else {
-            //2)
-            val aD_T = aD_T(gasTemperature, vacuumWavenumber, molarMass)
-            //3)
-            for (i in 0..(xData.size - 1)) {
-                yData[i] += S_T * gasColumnThickness * fG(xData[i], aD_T, vacuumWavenumber) * concentration
+            val dopplerBroadeningCoefficient = getDopplerBroadeningCoefficient(gasTemperature, vacuumWavenumber, molarMass)
+
+            for (i in 0..(vacuumWavenumberData.size - 1)) {
+                intensityData[i] +=
+                    getLineIntensity(intensityForTemperature, gasColumnThickness, concentration) *
+                    findIntensityByDopplerProfile(vacuumWavenumberData[i], dopplerBroadeningCoefficient, vacuumWavenumber)
             }
-            return yData
         }
+        return intensityData
     }
+
+    private fun getComponentsPressure(concentration: Double, gasPressure: Double) = concentration * gasPressure;
 
     //формула 1
     //Temperature dependence of the line intensity
-    private fun S_T(
-        S_Tref: Double,
-        Q_Tref: Double,
-        Q_T: Double,
-        E2shtreha: Double,
-        gasTemperature: Double,
-        vacuumWavenumber: Double
-    ) =
-        S_Tref * (Q_Tref / Q_T) * (exp(-C2 * E2shtreha / gasTemperature) / exp(-C2 * E2shtreha / T_REF)) * ((1 - exp(-C2 * vacuumWavenumber / gasTemperature)) / (1 - exp(
-            -C2 * vacuumWavenumber / T_REF
-        )))
+    private fun getIntensityForTemperature(
+            intensityForTemperatureRef: Double,
+            partitionSumForTemperatureRef: Double,
+            partitionSumForTemperature: Double,
+            lowerStateEnergy: Double,
+            gasTemperature: Double,
+            vacuumWavenumber: Double) =
+        intensityForTemperatureRef * (partitionSumForTemperatureRef / partitionSumForTemperature) *
+        (exp(-C2 * lowerStateEnergy / gasTemperature) / exp(-C2 * lowerStateEnergy / T_REF)) *
+        ((1 - exp(-C2 * vacuumWavenumber / gasTemperature)) / (1 - exp(-C2 * vacuumWavenumber / T_REF
+    )))
 
     //формула 2
     //Temperature and pressure dependence of the line width
-    private fun aD_T(gasTemperature: Double, vacuumWavenumber: Double, molarMass: Double) =
+    private fun getDopplerBroadeningCoefficient(
+            gasTemperature: Double,
+            vacuumWavenumber: Double,
+            molarMass: Double) =
         (vacuumWavenumber / C) * sqrt(2.0 * NA * K * gasTemperature * ln(2.0) / molarMass)
 
     //формула 3
     //γ(p,T) for a gas at pressure p (atm), temperature T (K) and partial pressure pself (atm)
-    private fun y_p_T(gasPressure: Double, T: Double, pself: Double, yair: Double, yself: Double, n: Double) =
-        ((T_REF / T).pow(n) * (yair * (gasPressure - pself) + yself * pself))
+    private fun getLorentzianBroadeningCoefficient(
+            gasPressure: Double,
+            gasTemperature: Double,
+            componentsPressure: Double,
+            gammaAir: Double,
+            gammaSelf: Double,
+            temperatureDependence: Double) =
+        (T_REF / gasTemperature).pow(temperatureDependence) * (gammaAir * (gasPressure - componentsPressure) + gammaSelf * componentsPressure)
 
     //формула 4
     //Pressure shift correction of line position
-    private fun correctVacuumWavenumber(vacuumWavenumber: Double, betta: Double, gasPressure: Double) =
+    private fun correctVacuumWavenumber(
+            vacuumWavenumber: Double,
+            betta: Double,
+            gasPressure: Double) =
         vacuumWavenumber + betta * gasPressure
 
     //формула 5
     //Absorption coefficient
     //Для нижних слоев атмосферы
-    private fun findIntensityByLorentzProfile(x: Double, y_p_T: Double, vacuumWavenumberCorrected: Double) =
-        (1 / PI) * (y_p_T / (y_p_T.pow(2.0) + (x - vacuumWavenumberCorrected).pow(2.0)))
+    private fun findIntensityByLorentzProfile(
+            currentVacuumWavenumber: Double,
+            lorentzianBroadeningCoefficient: Double,
+            vacuumWavenumberCorrected: Double) =
+        (1 / PI) * (lorentzianBroadeningCoefficient /
+        (lorentzianBroadeningCoefficient.pow(2.0) + (currentVacuumWavenumber - vacuumWavenumberCorrected).pow(2.0)))
 
     //Для верхних слоев атмосферы
-    private fun fG(x: Double, aD_T: Double, v: Double) =
-        sqrt(ln(2.0) / (PI * (aD_T.pow(2.0)))) * exp(-((x - v).pow(2.0)) * ln(2.0) / aD_T.pow(2.0))
+    private fun findIntensityByDopplerProfile(
+            currentVacuumWavenumber: Double,
+            dopplerBroadeningCoefficient: Double,
+            vacuumWavenumber: Double) =
+        sqrt(ln(2.0) / (PI * (dopplerBroadeningCoefficient.pow(2.0)))) *
+        exp(-((currentVacuumWavenumber - vacuumWavenumber).pow(2.0)) * ln(2.0) / dopplerBroadeningCoefficient.pow(2.0))
+
+    private fun getLineIntensity(
+            intensityForTemperature: Double,
+            gasColumnThickness: Double,
+            concentration: Double) =
+        intensityForTemperature * gasColumnThickness * concentration
 
     private fun getAppropriateRepository(moleculeType: LineType) =
         when (moleculeType) {
