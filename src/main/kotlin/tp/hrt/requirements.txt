@@ -1,2 +1,2 @@
 psycopg2==2.8.4
-numpy==1.18.4
+numpy==1.22.0
